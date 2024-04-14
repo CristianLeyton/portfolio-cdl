@@ -1,0 +1,14 @@
+@import "fonts.css";
+
+:root {
+    color-scheme: light dark;
+    --negro: #17181c;
+}
+
+.logo {
+    font-family: "Iceberg";
+}
+
+body {
+    background-color: var(--negro);
+}
