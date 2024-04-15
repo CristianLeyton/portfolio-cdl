@@ -1,6 +1,13 @@
 @font-face {
-    font-family: 'Iceberg';
-    src: url('../fonts/Iceberg-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
-  }
+  font-family: "Iceberg";
+  src: url("../fonts/Iceberg-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Onest";
+  src: url("../fonts/Onest-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

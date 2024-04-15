@@ -3,12 +3,45 @@
 :root {
     color-scheme: light dark;
     --negro: #17181c;
+    /* --primary: #0ea5e9; */
+    --primary: #6366f1;
+    --secondary: #aaaaaa;
+}
+
+body {
+    /* background-color: var(--negro); */
+    background: rgb(42,42,42);
+    background: radial-gradient(circle, rgba(42,42,42,1) 0%, rgba(23,24,28,1) 40%);
+    background-repeat: no-repeat;
+    font-family: "Onest";
+    background-position: fixed;
 }
 
 .logo {
     font-family: "Iceberg";
+    transition: 0.15s all ease-in-out;
 }
 
-body {
-    background-color: var(--negro);
+
+nav a {
+    transition: 0.15s all ease-in-out;
+}
+
+nav a:hover {
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.primary {
+    color: var(--primary);
+}
+
+.secondary {
+    color: var(--secondary);
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 64px;
+    aspect-ratio: 1/1;
 }

@@ -1,6 +1,20 @@
 ---
-import MySiteLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/MainLayout.astro';
+import Badge from '../components/Badge.astro'
 ---
-<MySiteLayout title="Portafolio - CDL">
-  <p>My page content, wrapped in a layout!</p>
-</MySiteLayout>
+<Layout title="Portafolio - CDL">
+  <main class="container mx-auto flex flex-col items-center justify-center">
+    <section class="py-20 px-10">
+      <article class="">
+        <header class="flex justify-between items-center mb-3">
+          <img class="avatar" src="../../public/assets/images/yo.png" alt="Cristian Diego Leyton"> 
+          <Badge><a href="https://www.linkedin.com/in/cristian-leyton-559a18250" target="_blank">Disponible</a></Badge> 
+        </header>
+        <h1 class="text-3xl sm:text-4xl font-bold">Hola! <br class="block sm:hidden"> Soy <span class="primary font-semibold">Cristian Diego Leyton</span></h1>
+        <p class="secondary">Desarrollador Web</p>
+        <p>Soy de Argentina, de la ciudad de Salta. <br> Me entusiasma todo lo relacionado a la tecnologia, y programar webs es una de mis actividades favoritas.</p>
+      </article>
+    </section>
+    
+  </main>
+</Layout>
