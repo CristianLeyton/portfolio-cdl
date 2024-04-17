@@ -1,0 +1,66 @@
+---
+import Pill from "./Pill.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro"
+import LaravelIcon from "./icons/LaravelIcon.astro"
+import LivewireIcon from "./icons/LivewireIcon.astro"
+
+const TAGS = {
+    TAILWIND: {
+        name: 'Tailwind',
+        icon: TailwindIcon,
+        class: 'bg-sky-900 text-white'
+    },
+
+    LARAVEL: {
+        name: 'Laravel',
+        icon: LaravelIcon,
+        class: 'bg-red-900 text-white'
+    },
+
+    LIVEWIRE: {
+        name: 'Livewire',
+        icon: LivewireIcon,
+        class: 'bg-pink-900 text-white'
+    }
+}
+
+const PROJECTS = [
+  {
+    title: "App Tareas",
+    description:
+      "Una aplicación donde podes administrar tus tareas pendientes, consultar las completadas y organizarlas con un sistema de etiquetas.",
+    link: "https://cdl.free.nf/inicio",
+    github: "https://github.com/CristianLeyton/app-tareas",
+    image: "../../public/assets/images/tarea.png",
+    tags: [TAGS.LARAVEL, TAGS.LIVEWIRE, TAGS.TAILWIND],
+  },
+];
+---
+
+{
+  PROJECTS.map((project) => (
+    <article class="flex flex-wrap justify-between">
+      <a href={project.link} class="hover:scale-105 transition-all ease-in-out duration-500"><img class="rounded aspect-video w-80 " src={project.image} alt="" /></a>
+      <section class="flex flex-col gap-3 justify-center w-full sm:w-[50%] text-pretty">
+        <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">{project.title}</h3>
+        <ul class="flex gap-2">
+            {project.tags.map((tag) => (
+                <li class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${tag.class}`}>
+                <tag.icon class="size-4"/>
+                {tag.name}
+                </li>
+            ))}
+        </ul>
+        <p>{project.description}</p>
+        <span class="flex gap-3 ">
+          <Pill href={project.link}>
+            <i class="bx bx-link-alt" /> Visitar
+          </Pill>
+          <Pill href={project.github}>
+            <i class="bx bxl-github" /> Código
+          </Pill>
+        </span>
+      </section>
+    </article>
+  ))
+}

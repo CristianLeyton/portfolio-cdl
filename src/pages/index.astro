@@ -1,20 +1,58 @@
 ---
-import Layout from '../layouts/MainLayout.astro';
-import Badge from '../components/Badge.astro'
+import Layout from "../layouts/MainLayout.astro";
+import Badge from "../components/Badge.astro";
+import Pill from "../components/Pill.astro";
+import Experience from "../components/Experience.astro";
+import Title from "../components/Title.astro";
+import Projects from "../components/Projects.astro";
 ---
+
 <Layout title="Portafolio - CDL">
-  <main class="container mx-auto flex flex-col items-center justify-center">
-    <section class="py-20 px-10">
-      <article class="">
+  <main class="flex flex-col items-center justify-center container mx-auto box-border">
+    <section id="inicio" class="max-w-[768px] py-20 px-5 ">
+      <article class="flex flex-col gap-1">
         <header class="flex justify-between items-center mb-3">
-          <img class="avatar" src="../../public/assets/images/yo.png" alt="Cristian Diego Leyton"> 
-          <Badge><a href="https://www.linkedin.com/in/cristian-leyton-559a18250" target="_blank">Disponible</a></Badge> 
+          <img
+            class="avatar"
+            src="../../public/assets/images/yo.png"
+            alt="Cristian Diego Leyton"
+          />
+          <Badge>
+            <a href="https://www.linkedin.com/in/cristian-leyton-559a18250"
+              target="_blank">Disponible</a>
+          </Badge>
         </header>
-        <h1 class="text-3xl sm:text-4xl font-bold">Hola! <br class="block sm:hidden"> Soy <span class="primary font-semibold">Cristian Diego Leyton</span></h1>
+        <h1 class="text-3xl sm:text-4xl font-bold">
+          Hola! <br class="block sm:hidden" /> Soy <span
+            class="primary font-bold">Cristian Diego Leyton</span
+          >
+        </h1>
         <p class="secondary">Desarrollador Web</p>
-        <p>Soy de Argentina, de la ciudad de Salta. <br> Me entusiasma todo lo relacionado a la tecnologia, y programar webs es una de mis actividades favoritas.</p>
+        <p>
+          Soy de Argentina, de la ciudad de Salta. <br /> Me entusiasma todo lo relacionado
+          a la tecnologia, y programar webs es una de mis actividades favoritas.
+        </p>
+        <footer class="mt-5 flex gap-2">
+          <Pill href="https://www.linkedin.com/in/cristian-leyton">
+            <i class="bx bxl-linkedin-square text-xl"></i> LinkedIn
+          </Pill>
+          <Pill href="https://github.com/CristianLeyton">
+            <i class="bx bxl-github text-xl"></i> GitHub </Pill>
+          <Pill href="mailto:leytoncristian96@gmail.com">
+            <i class="bx bx-mail-send text-xl"></i> Contáctame
+          </Pill>
+        </footer>
       </article>
     </section>
-    
+
+    <section id="proyectos" class="max-w-[768px] px-5 box-border mb-5">
+      <Title><i class='bx bx-code-block'></i>Proyectos</Title>
+      <Projects></Projects>
+    </section>
+
+    <section id="experiencia" class="max-w-[768px] px-5 box-border mb-5">
+      <Title><i class='bx bxs-briefcase'></i>Experiencia</Title>
+      <Experience></Experience>
+    </section>
   </main>
 </Layout>

@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const EXPERIENCIE = [
+{
+    date: "Enero 2021",
+    title: "Soporte Técnico",
+    description: `Actualmente trabajo con un sistema de gestión de farmacias (Winfarma), soy el encargado de instalar
+    y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
+    `
+  },
+  {
+    date: "Marzo 2019",
+    title: "Técnico en reparación de PC",
+    description: `Trabaje de forma independiente reparando PC's a clientes particulares. No soy especialista, pero conozco lo
+    suficiente para instalar sistemas operativos y armar equipos.
+    `
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCIE.map((experience) => (
+      <li class="mb-10 ms-4 text-pretty">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

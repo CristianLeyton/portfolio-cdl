@@ -8,13 +8,15 @@
     --secondary: #aaaaaa;
 }
 
-body {
-    /* background-color: var(--negro); */
-    background: rgb(42,42,42);
-    background: radial-gradient(circle, rgba(42,42,42,1) 0%, rgba(23,24,28,1) 40%);
-    background-repeat: no-repeat;
+ body {
     font-family: "Onest";
-    background-position: fixed;
+    height: auto;
+    width: 100vw;
+} 
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 .logo {

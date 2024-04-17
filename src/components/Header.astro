@@ -2,13 +2,16 @@
 const logo = "{CDL}";
 ---
 
-<header class="flex container mx-auto justify-around items-center p-3">
-  <x-logo class="logo text-4xl cursor-pointer select-none"> <a href="/"> {logo} </a></x-logo>
-
-  <nav class="flex gap-8">
-    <a href="/">Inicio</a>
-    <a href="/sobremi">Sobre Mi</a>
-    <a href="/projectos">Proyectos</a>
-    <a href="/contacto">Contacto</a>
+<header class="flex flex-col justify-center items-center pt-7">
+  <nav class="flex justify-center items-center gap-6 text-sm sm:text-base sm:gap-8 ">
+    <a href="#inicio">Inicio</a>
+    <a href="#sobremi">Sobre Mi</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#" class="flex items-center text-xl">
+      <i class='bx bxs-sun'></i>
+      <!-- <i class='bx bxs-moon'></i> -->
+    </a>
+    
   </nav>
 </header>
