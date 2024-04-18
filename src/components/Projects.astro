@@ -3,6 +3,7 @@ import Pill from "./Pill.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro"
 import LaravelIcon from "./icons/LaravelIcon.astro"
 import LivewireIcon from "./icons/LivewireIcon.astro"
+import BootstrapIcon from "./icons/BootstrapIcon.astro";
 
 const TAGS = {
     TAILWIND: {
@@ -21,12 +22,18 @@ const TAGS = {
         name: 'Livewire',
         icon: LivewireIcon,
         class: 'bg-pink-900 text-white'
+    },
+
+    BOOTSTRAP: {
+        name: 'Bootstrap',
+        icon: BootstrapIcon,
+        class: 'bg-indigo-950 text-white'
     }
 }
 
 const PROJECTS = [
   {
-    title: "App Tareas",
+    title: "Tareas | WebApp",
     description:
       "Una aplicación donde podes administrar tus tareas pendientes, consultar las completadas y organizarlas con un sistema de etiquetas.",
     link: "https://cdl.free.nf/inicio",
@@ -34,14 +41,23 @@ const PROJECTS = [
     image: "../../public/assets/images/tarea.png",
     tags: [TAGS.LARAVEL, TAGS.LIVEWIRE, TAGS.TAILWIND],
   },
+  {
+    title: "Esmarty | Ecommerce",
+    description:
+      "Sitio de ventas de productos electrónicos. Este e-commerce fue el proyecto final de mi técnicatura en analisis de sistemas. ",
+    link: "https://esmarty.free.nf/",
+    github: "https://github.com/AJazure/esmarty-webapp-ecommerce",
+    image: "../../public/assets/images/esmarty.png",
+    tags: [TAGS.LARAVEL, TAGS.BOOTSTRAP],
+  },
 ];
 ---
 
 {
   PROJECTS.map((project) => (
-    <article class="flex flex-wrap justify-between">
-      <a href={project.link} class="hover:scale-105 transition-all ease-in-out duration-500"><img class="rounded aspect-video w-80 " src={project.image} alt="" /></a>
-      <section class="flex flex-col gap-3 justify-center w-full sm:w-[50%] text-pretty">
+    <article class="flex flex-wrap items-center gap-4 justify-between border border-gray-700 rounded-xl py-4 px-3 mb-4">
+      <a href={project.link} class="hover:scale-105 transition-all ease-in-out duration-500 mx-auto"><img class="rounded aspect-video w-[22rem] " src={project.image} alt="" /></a>
+      <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
         <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">{project.title}</h3>
         <ul class="flex gap-2">
             {project.tags.map((tag) => (

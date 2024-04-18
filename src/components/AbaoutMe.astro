@@ -1,0 +1,45 @@
+---
+import Pill from "./Pill.astro";
+
+const logo = "CDL";
+---
+
+<div class="flex flex-col items-center gap-2 text-pretty">
+  <p class="logo text-7xl sm:text-8xl hidden md:flex">
+    <span class="text-indigo-500">{`{`}</span>{logo}
+    <span class="text-indigo-500">{`}`}</span>
+  </p>
+
+  <div class="flex items-center text-pretty gap-3 flex-wrap md:flex-nowrap justify-center">
+    <div class="flex flex-col gap-3 order-2 md:order-1">
+
+    <p class="text-lg font-semibold"> ¡Hola! Me llamo <span class="text-indigo-400"
+        >Cristian Diego Leyton</span>. </p>
+
+      <p>
+        Soy <span class="text-indigo-400"
+          >Técnico en análisis de sistemas informáticos.</span
+        > Tengo conocimientos en desarrollo web, en backend con Laravel y en frontend
+        con Astro. Considero que soy bastante hábil a la hora de resolver problemas
+        de manera eficiente.
+      </p>
+
+      <p>
+        Estudie un año de Ingenieria en la <span class="text-indigo-400"
+          >UNSa</span
+        >, que me sirvió para desarrollar mi lógica y estudie para técnico en
+        análisis de sistemas en el <span class="text-indigo-400"
+          >Instituto Superior del Milagro</span
+        >.
+      </p>
+    </div>
+    <img
+      class="size-56 border border-gray-600 p-2 rounded-md rotate-2 order-1 md:order-2"
+      src="../../public/assets/images/yo.png"
+      alt="Cristian Diego Leyton"
+    />
+  </div>
+
+  <Pill href="../../public/assets/files/Cristian_Diego_LeytonCV.pdf"> <i class='bx bxs-file text-xl' ></i> Descargar CV </Pill>
+
+</div>
