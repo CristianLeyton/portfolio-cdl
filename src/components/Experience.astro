@@ -1,5 +1,6 @@
 ---
 import ExperienceItem from "../components/ExperienceItem.astro";
+import Pill from "./Pill.astro";
 
 const EXPERIENCIE = [
 {
@@ -22,9 +23,13 @@ const EXPERIENCIE = [
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
   {
     EXPERIENCIE.map((experience) => (
-      <li class="mb-10 ms-4 text-pretty">
+      <li class="mb-5 ms-4 text-pretty">
         <ExperienceItem {...experience} />
       </li>
     ))
   }
 </ol>
+
+<span class="flex justify-center">
+<Pill href="./assets/files/Cristian_Diego_LeytonCV.pdf"> <i class='bx bxs-file text-xl' ></i> Descargar CV </Pill>
+</span>
