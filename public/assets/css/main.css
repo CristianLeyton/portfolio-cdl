@@ -1,7 +1,6 @@
 @import "fonts.css";
 
 :root {
-    color-scheme: light dark;
     --negro: #17181c;
     /* --primary: #0ea5e9; */
     --primary: #6366f1;
@@ -11,6 +10,7 @@
  body {
     font-family: "Onest";
     height: auto;
+    color: white;
 } 
 
 
