@@ -1,35 +1,35 @@
 ---
 import Pill from "./Pill.astro";
-import TailwindIcon from "./icons/TailwindIcon.astro"
-import LaravelIcon from "./icons/LaravelIcon.astro"
-import LivewireIcon from "./icons/LivewireIcon.astro"
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import LaravelIcon from "./icons/LaravelIcon.astro";
+import LivewireIcon from "./icons/LivewireIcon.astro";
 import BootstrapIcon from "./icons/BootstrapIcon.astro";
 
 const TAGS = {
-    TAILWIND: {
-        name: 'Tailwind',
-        icon: TailwindIcon,
-        class: 'bg-sky-900 text-white'
-    },
+  TAILWIND: {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    class: "bg-sky-900 text-white",
+  },
 
-    LARAVEL: {
-        name: 'Laravel',
-        icon: LaravelIcon,
-        class: 'bg-red-900 text-white'
-    },
+  LARAVEL: {
+    name: "Laravel",
+    icon: LaravelIcon,
+    class: "bg-red-900 text-white",
+  },
 
-    LIVEWIRE: {
-        name: 'Livewire',
-        icon: LivewireIcon,
-        class: 'bg-pink-900 text-white'
-    },
+  LIVEWIRE: {
+    name: "Livewire",
+    icon: LivewireIcon,
+    class: "bg-pink-900 text-white",
+  },
 
-    BOOTSTRAP: {
-        name: 'Bootstrap',
-        icon: BootstrapIcon,
-        class: 'bg-indigo-950 text-white'
-    }
-}
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    icon: BootstrapIcon,
+    class: "bg-indigo-950 text-white",
+  },
+};
 
 const PROJECTS = [
   {
@@ -55,17 +55,31 @@ const PROJECTS = [
 
 {
   PROJECTS.map((project) => (
-    <article class="flex flex-wrap items-center gap-4 justify-between border border-gray-700 rounded-xl py-4 px-3 mb-4">
-      <a href={project.link} class="hover:scale-105 transition-all ease-in-out duration-500 mx-auto"><img class="rounded aspect-video w-[22rem] " src={project.image} alt="" /></a>
+    <article class="card-proyecto flex flex-wrap items-center gap-4 justify-between border border-gray-700/50 rounded-xl py-4 px-3 mb-4">
+      <a
+        href={project.link}
+        class="hover:scale-105 transition-all ease-in-out duration-500 mx-auto"
+        target="_blank"
+      >
+        <img
+          class="rounded aspect-video w-[22rem] "
+          src={project.image}
+          alt=""
+        />
+      </a>
       <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
-        <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">{project.title}</h3>
+        <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">
+          {project.title}
+        </h3>
         <ul class="flex gap-2">
-            {project.tags.map((tag) => (
-                <li class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${tag.class}`}>
-                <tag.icon class="size-4"/>
-                {tag.name}
-                </li>
-            ))}
+          {project.tags.map((tag) => (
+            <li
+              class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${tag.class}`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </li>
+          ))}
         </ul>
         <p>{project.description}</p>
         <span class="flex gap-3 ">
@@ -80,3 +94,20 @@ const PROJECTS = [
     </article>
   ))
 }
+
+<style is:global>
+  #proyectos {
+    background:
+      linear-gradient(135deg, #818df808 25%, transparent 25%) -50px 0,
+      linear-gradient(225deg, #818df808 25%, transparent 25%) -50px 0,
+      linear-gradient(315deg, #818df808 25%, transparent 25%),
+      linear-gradient(45deg, #818df808 25%, transparent 25%);
+    background-size: 2em 2em;
+    background-color: transparent;
+  }
+
+  .card-proyecto {
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(3px);
+  }
+</style>
