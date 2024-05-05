@@ -85,7 +85,11 @@ const PROJECTS = [
       </a>
       <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
         <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">
-          {project.title}
+          <a
+        href={project.link}
+        class=""
+        target="_blank"
+      >{project.title}</a>
         </h3>
         <ul class="flex gap-2">
           {project.tags.map((tag) => (
