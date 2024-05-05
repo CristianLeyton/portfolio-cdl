@@ -4,8 +4,21 @@ import TailwindIcon from "./icons/TailwindIcon.astro";
 import LaravelIcon from "./icons/LaravelIcon.astro";
 import LivewireIcon from "./icons/LivewireIcon.astro";
 import BootstrapIcon from "./icons/BootstrapIcon.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
 
 const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    icon: AstroIcon,
+    class: "bg-orange-800 text-white",
+  },
+
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    icon: BootstrapIcon,
+    class: "bg-indigo-950 text-white",
+  },
+
   TAILWIND: {
     name: "Tailwind",
     icon: TailwindIcon,
@@ -23,12 +36,6 @@ const TAGS = {
     icon: LivewireIcon,
     class: "bg-pink-900 text-white",
   },
-
-  BOOTSTRAP: {
-    name: "Bootstrap",
-    icon: BootstrapIcon,
-    class: "bg-indigo-950 text-white",
-  },
 };
 
 const PROJECTS = [
@@ -38,7 +45,7 @@ const PROJECTS = [
       "Una aplicación donde podes administrar tus tareas pendientes, consultar las completadas y organizarlas con un sistema de etiquetas.",
     link: "https://cdl.free.nf/inicio",
     github: "https://github.com/CristianLeyton/app-tareas",
-    image: "./assets/images/tarea.png",
+    image: "./assets/images/tareas.png",
     tags: [TAGS.LARAVEL, TAGS.LIVEWIRE, TAGS.TAILWIND],
   },
   {
@@ -49,6 +56,15 @@ const PROJECTS = [
     github: "https://github.com/AJazure/esmarty-webapp-ecommerce",
     image: "/assets/images/esmarty.png",
     tags: [TAGS.LARAVEL, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "Estetica | Landing Page",
+    description:
+      "Página web para una estetica, es una landing page simple, con cinco secciones. Se supone que la hice para una estetica de mi ciudad, pero al final no. ",
+    link: "https://page-cosmetica.vercel.app/",
+    github: "https://github.com/CristianLeyton/landing-cosmetica",
+    image: "/assets/images/estetica.png",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
   },
 ];
 ---
