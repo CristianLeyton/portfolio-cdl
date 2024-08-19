@@ -5,6 +5,9 @@ import LaravelIcon from "./icons/LaravelIcon.astro";
 import LivewireIcon from "./icons/LivewireIcon.astro";
 import BootstrapIcon from "./icons/BootstrapIcon.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import JsIcon from "./icons/JsIcon.astro";
+import HTMLIcon from "./icons/HTMLIcon.astro";
+import CSSIcon from "./icons/CSSIcon.astro";
 
 const TAGS = {
   ASTRO: {
@@ -19,10 +22,22 @@ const TAGS = {
     class: "bg-indigo-950 text-white",
   },
 
-  TAILWIND: {
-    name: "Tailwind",
-    icon: TailwindIcon,
-    class: "bg-sky-900 text-white",
+  CSS: {
+    name: "CSS",
+    icon: CSSIcon,
+    class: "bg-cyan-500 text-white",
+  },
+
+  HTML: {
+    name: "HTML",
+    icon: HTMLIcon,
+    class: "bg-orange-500 text-white",
+  },
+
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JsIcon,
+    class: "bg-yellow-500 text-white",
   },
 
   LARAVEL: {
@@ -36,11 +51,26 @@ const TAGS = {
     icon: LivewireIcon,
     class: "bg-pink-900 text-white",
   },
+
+  TAILWIND: {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    class: "bg-sky-900 text-white",
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Tareas | WebApp",
+    title: "Reto 50 dias | Web Page",
+    description:
+      "Esta es mi version del reto de 50 miniproyectos utilizando solamente HTML, CSS y JS. Para hacer la web si usé astro y tailwind. ",
+    link: "https://reto-50-dias.vercel.app/",
+    github: "https://github.com/CristianLeyton/proyectos-reto-50-dias",
+    image: "./assets/images/50miniproyectos.png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.ASTRO],
+  },
+  {
+    title: "Tareas | Web App",
     description:
       "Una aplicación donde podes administrar tus tareas pendientes, consultar las completadas y organizarlas con un sistema de etiquetas.",
     link: "https://cdl.free.nf/inicio",
@@ -85,11 +115,9 @@ const PROJECTS = [
       </a>
       <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
         <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">
-          <a
-        href={project.link}
-        class=""
-        target="_blank"
-      >{project.title}</a>
+          <a href={project.link} class="" target="_blank">
+            {project.title}
+          </a>
         </h3>
         <ul class="flex gap-2">
           {project.tags.map((tag) => (
