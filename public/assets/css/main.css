@@ -2,7 +2,6 @@
 
 :root {
     --negro: #17181c;
-    /* --primary: #0ea5e9; */
     --primary: #6366f1;
     --secondary: #aaaaaa;
 }
@@ -10,7 +9,6 @@
  body {
     font-family: "Onest";
     height: auto;
-    color: white;
     overflow-x: hidden;
 } 
 

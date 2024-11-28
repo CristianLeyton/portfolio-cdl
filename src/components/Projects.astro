@@ -9,6 +9,7 @@ import JsIcon from "./icons/JsIcon.astro";
 import HTMLIcon from "./icons/HTMLIcon.astro";
 import CSSIcon from "./icons/CSSIcon.astro";
 import VueIcon from "./icons/VueIcon.astro";
+import ProjectCard from "./ProjectCard.astro";
 
 const TAGS = {
   ASTRO: {
@@ -116,45 +117,7 @@ const PROJECTS = [
 
 {
   PROJECTS.map((project) => (
-    <article class="card-proyecto flex flex-wrap items-center gap-4 justify-between border border-gray-700/50 rounded-xl py-4 px-3 mb-4">
-      <a
-        href={project.link}
-        class="hover:scale-105 transition-all ease-in-out duration-500 mx-auto"
-        target="_blank"
-      >
-        <img
-          class="rounded aspect-video w-[22rem] "
-          src={project.image}
-          alt=""
-        />
-      </a>
-      <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
-        <h3 class="font-semibold text-2xl text-indigo-300 mt-3 sm:mt-0">
-          <a href={project.link} class="" target="_blank">
-            {project.title}
-          </a>
-        </h3>
-        <ul class="flex gap-2">
-          {project.tags.map((tag) => (
-            <li
-              class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${tag.class}`}
-            >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </li>
-          ))}
-        </ul>
-        <p>{project.description}</p>
-        <span class="flex gap-3 ">
-          <Pill href={project.link}>
-            <i class="bx bx-link-alt" /> Visitar
-          </Pill>
-          <Pill href={project.github}>
-            <i class="bx bxl-github" /> Código
-          </Pill>
-        </span>
-      </section>
-    </article>
+    <ProjectCard {...project} />
   ))
 }
 
@@ -169,8 +132,4 @@ const PROJECTS = [
     background-color: transparent;
   }
 
-  .card-proyecto {
-    background-color: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(3px);
-  }
 </style>

@@ -1,0 +1,51 @@
+---
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
+---
+
+<button
+  id="themeToggle"
+  class="block p-1 rounded-full transition hover:text-indigo-500 hover:bg-neutral-700/20 hover:scale-110"
+>
+  <span id="moonIcon" class="hidden dark:block"><MoonIcon /></span>
+  <span id="sunIcon" class="dark:hidden"><SunIcon /></span>
+</button>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const tagHTML = document.documentElement;
+    const button = document.querySelector("#themeToggle");
+    const moonIcon = document.querySelector("#moonIcon");
+    const sunIcon = document.querySelector("#sunIcon");
+
+    // Comprobar tema guardado en localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      tagHTML.classList.add(savedTheme);
+    } 
+
+    console.log(savedTheme);
+
+    function toggleTheme() {
+
+      tagHTML.classList.toggle("dark");
+      const newTheme = tagHTML.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+
+      moonIcon.classList.toggle("hidden");
+      sunIcon.classList.toggle("hidden");
+    }
+
+    if (savedTheme == "dark") {
+      moonIcon.classList.remove("hidden");
+      sunIcon.classList.add("hidden");
+    }
+
+    // Alternar tema al hacer clic
+    button.addEventListener("click", () => {
+      toggleTheme();
+      // Enviar el evento a nivel de `window` para cambiar el logo en el componente logo.astro
+      //window.dispatchEvent(new CustomEvent("user:toggleTheme", {}));
+    });
+  });
+</script>

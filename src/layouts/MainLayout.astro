@@ -1,33 +1,37 @@
 ---
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 const { title } = Astro.props;
-
 ---
 
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Portafolio - Cristian Diego Leyton">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Portafolio, Cristian, Diego, Leyton, Astro, Tailwind">
-    <meta name="author" content="Cristian Diego Leyton">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/css/main.css?v=1">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <title > {title} </title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Portafolio - Cristian Diego Leyton" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Portafolio, Cristian, Diego, Leyton, Astro, Tailwind"
+    />
+    <meta name="author" content="Cristian Diego Leyton" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css?v=1" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <ViewTransitions />
+    <title>{title}</title>
   </head>
-  <body>
-    <Header></Header>
+  <body class="">
+    <Header />
     <div
-    class="fixed top-0 z-[-2] min-h-[100dvh] w-screen bg-neutral-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-  >
-  </div>
+    class="fixed top-0 z-[-2] h-full w-screen text-neutral-200 dark:text-neutral-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] bg-neutral-900 dark:bg-neutral-50"
+    >
+    </div>
+    <slot />
 
-      <slot /> <!-- your content is injected here -->
-    
-      
   </body>
 </html>
