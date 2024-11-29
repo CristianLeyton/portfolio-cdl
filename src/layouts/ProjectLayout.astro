@@ -1,0 +1,67 @@
+---
+import MainLayout from "./MainLayout.astro";
+const { frontmatter } = Astro.props;
+import { TAGS } from "../components/ProjectCard.astro";
+import Pill from "../components/Pill.astro";
+---
+
+<MainLayout title={frontmatter.title}>
+  <article
+    class="flex flex-col container mx-auto max-w-[768px] py-8 px-5 text-white dark:text-neutral-700"
+  >
+    <header class="grid items-center gap-5 mb-5">
+        <div class="flex justify-between items-center">
+      <h1 class="font-bold text-xl">{frontmatter.title}</h1>
+       <a href="/#proyectos" class="font-bold text-sm text-gray-400 dark:text-gray-500"> <span class="mr-2">◀</span> Volver atras </a>
+    </div>
+    <hr class="border-gray-700 dark:border-gray-300"/>
+      <ul class="flex gap-3">
+      {frontmatter.tags.map((tag) => (
+        <li
+          class={`flex w-fit gap-1 items-center rounded-full text-sm py-1 px-2 ${TAGS[tag].class}`}
+        >
+          <TAGS[tag].icon class="size-5"/>
+          {TAGS[tag].name}
+        </li>
+      ))}
+      </ul>
+      <a href={frontmatter.link} target="_blank" rel="noopener noreferrer">
+      <img
+        transition:name=`image-${frontmatter.title}`
+        src={frontmatter.image}
+        alt={frontmatter.image.alt}
+        class="rounded-lg aspect-video"
+      />
+    </a>
+      <p>{frontmatter.description}</p>
+
+      <span class="flex gap-3 ">
+        <Pill className="text-base px-3 py-1" href={frontmatter.link}>
+          <i class="bx bx-link-alt" /> Ver Demo en Vivo
+        </Pill>
+        <Pill className="text-base px-3 py-1" href={frontmatter.github}>
+          <i class="bx bxl-github" /> Ver repositorio de GitHub
+        </Pill>
+      </span>
+      <hr class="border-gray-700 dark:border-gray-300"/>
+    </header>
+
+    <main class="prose prose-invert dark:prose text-pretty">
+    <slot />
+    </main>
+        <a href="/#proyectos" class="mt-10 font-bold text-sm"> <span class="mr-2">◀</span> Volver atras </a>
+  </article>
+</MainLayout>
+
+<style is:inline>
+    p:has(img) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        aspect-ratio: auto;
+    }
+</style>

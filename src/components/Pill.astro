@@ -1,8 +1,10 @@
 ---
-const {href} = Astro.props;
+const {href, className} = Astro.props;
 ---
 
-<a href={href} class="w-fit flex gap-1 items-center rounded-full border border-white/20 px-2 bg-gray-800/50 pill dark:bg-slate-100 dark:border-neutral-300" target="_blank">
+<a href={href} 
+class:list={["w-fit flex gap-1 items-center rounded-full border border-white/20 px-2 bg-gray-800/50 pill dark:bg-slate-100 dark:border-neutral-300", className]}
+ target="_blank">
     <slot />
 </a>
 

@@ -1,20 +1,91 @@
 ---
 import Pill from "./Pill.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import LaravelIcon from "./icons/LaravelIcon.astro";
+import LivewireIcon from "./icons/LivewireIcon.astro";
+import BootstrapIcon from "./icons/BootstrapIcon.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import JsIcon from "./icons/JsIcon.astro";
+import HTMLIcon from "./icons/HTMLIcon.astro";
+import CSSIcon from "./icons/CSSIcon.astro";
+import VueIcon from "./icons/VueIcon.astro";
+import StrapiIcon from "./icons/StrapiIcon.astro";
 
-const { link, image, title, description, tags, github } = Astro.props;
+const { url, link, image, title, description, tags, github } = Astro.props;
+
+export const TAGS = {
+  ASTRO: {
+    name: "Astro",
+    icon: AstroIcon,
+    class: "bg-orange-800 text-white",
+  },
+
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    icon: BootstrapIcon,
+    class: "bg-indigo-950 text-white",
+  },
+
+  CSS: {
+    name: "CSS",
+    icon: CSSIcon,
+    class: "bg-cyan-500 text-white",
+  },
+
+  HTML: {
+    name: "HTML",
+    icon: HTMLIcon,
+    class: "bg-orange-500 text-white",
+  },
+
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JsIcon,
+    class: "bg-yellow-500 text-white",
+  },
+
+  LARAVEL: {
+    name: "Laravel",
+    icon: LaravelIcon,
+    class: "bg-red-900 text-white",
+  },
+
+  LIVEWIRE: {
+    name: "Livewire",
+    icon: LivewireIcon,
+    class: "bg-pink-900 text-white",
+  },
+
+  TAILWIND: {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    class: "bg-sky-900 text-white",
+  },
+  VUE: {
+    name: "Vue",
+    icon: VueIcon,
+    class: "bg-green-700 text-white",
+  },
+  STRAPI: {
+    name: "Strapi",
+    icon: StrapiIcon,
+    class: "bg-indigo-900 text-white",
+  },
+};
 
 ---
 
 <article class="card-proyecto hover:border-indigo-400/70 transition bg-black/20 dark:bg-white/40 backdrop-blur-sm flex flex-wrap items-center gap-4 justify-between border border-gray-700/50 dark:border-gray-200 rounded-xl py-4 px-3 mb-4">
     <a
-      href={link}
+      href={url}
       class="hover:scale-105 transition-all ease-in-out duration-500 mx-auto"
-      target="_blank"
     >
       <img
+      transition:name=`image-${title}`
         class="rounded aspect-video w-[22rem] "
         src={image}
         alt=""
+        title="Ver más sobre el proyecto"
       />
     </a>
     <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
@@ -24,12 +95,13 @@ const { link, image, title, description, tags, github } = Astro.props;
         </a>
       </h3>
       <ul class="flex gap-2">
+        <!--  No se porque da error pero funciona como quiero  -->
         {tags.map((tag) => (
           <li
-            class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${tag.class}`}
+            class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${TAGS[tag].class}`}
           >
-            <tag.icon class="size-4" />
-            {tag.name}
+            <TAGS[tag].icon class="size-4"/>
+            {TAGS[tag].name}
           </li>
         ))}
       </ul>
