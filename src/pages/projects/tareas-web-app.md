@@ -3,7 +3,7 @@ layout: "../../layouts/ProjectLayout.astro"
 order: 1
 title: "Tareas | Web App"
 description: "Una aplicación donde podes administrar tus tareas pendientes, consultar las completadas y organizarlas con un sistema de etiquetas."
-link: "https://cdl.free.nf/"
+link: "https://tareas.cdl.com.ar/"
 github: "https://github.com/CristianLeyton/app-tareas"
 image: "/assets/images/tareas.webp"
 tags: [LARAVEL, LIVEWIRE, TAILWIND]
@@ -23,7 +23,7 @@ Esta hecha en Laravel usando Livewire, con una base de datos MySQL, traté de ha
 ![image](https://github.com/user-attachments/assets/4d1d906a-df22-496e-8689-9a0539fe4eb1)
 
 Acceder al sitio:
-<https://cdl.free.nf/>
+<https://tareas.cdl.com.ar/>
 
 > Usuario: <test@mail.com>
 >
