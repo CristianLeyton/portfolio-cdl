@@ -1,0 +1,89 @@
+---
+import CVLayout from "../layouts/CVLayout.astro";
+import { datos } from "./CV.astro";
+---
+
+<CVLayout title="CV-ATS">
+  <div id="cv-content" class="max-w-4xl mx-auto p-8">
+    <section class="mb-6">
+      <h1 class="font-bold mb-4 text-3xl text-center">{datos.nombre}</h1>
+      <div class="flex justify-between text-gray-600 font-semibold">
+        <a
+          href={`mailto:${datos.email}`}
+          target="_blank"
+          rel="noopener noreferrer">Email: {datos.email}</a
+        >
+        <a
+          href={`https://api.whatsapp.com/send/?phone=${datos.telefono}&text=Hola&type=phone_number&app_absent=0`}
+          target="_blank"
+          rel="noopener noreferrer">Contacto: {datos.telefono}</a
+        >
+      </div>
+
+      <div class="flex justify-between text-gray-600 font-semibold">
+        <a href={datos.link} target="_blank" rel="noopener noreferrer"
+          >Portafolio: {datos.link}</a
+        >
+        <p class="">Ubicación: {datos.direccion}</p>
+      </div>
+    </section>
+
+    <section class="mt-4">
+      <h2 class="text-xl font-semibold">Resumen</h2>
+      <p class="mt-2 text-gray-700">{datos.resumen}</p>
+    </section>
+
+    <section class="mt-4">
+      <h2 class="text-xl font-semibold">Experiencia</h2>
+      <ul class="list-disc pl-5 mt-2">
+        {
+          datos.experiencia.map((exp) => (
+            <li class="mb-2">
+                <span class="flex justify-between"><span><strong>{exp.title}</strong>, ({exp.empresa})</span> <span class="text-sm text-gray-500">| {exp.date}</span> </span>
+              <p class="text-gray-700">{exp.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-4">
+      <h2 class="text-xl font-semibold">
+        Formación académica
+      </h2>
+      <ul class="list-disc pl-5 mt-2">
+        {
+          datos.formacion.map((edu) => (
+            <li class="mb-2">
+             <span class="flex justify-between"><strong>{edu.title}</strong> <span class="text-sm text-gray-500">| {edu.date}</span> </span>
+              <p class="text-gray-700">{edu.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-4">
+      <h2 class="text-xl font-semibold">Aptitudes</h2>
+      <ul class="list-disc pl-5 mt-2 grid grid-cols-2">
+        {datos.aptitudes.map((apt) => <li class="text-gray-700">{apt}</li>)}
+      </ul>
+    </section>
+
+    {
+      datos.presentacion && (
+        <section class="mt-4">
+          <h2 class="text-xl font-semibold">Más sobre mí</h2>
+          <p class="mt-2 text-gray-700">{datos.presentacion}</p>
+        </section>
+      )
+    }
+  </div>
+</CVLayout>
+
+<style>
+
+  body {
+    font-family: none;
+  }
+</style>

@@ -1,0 +1,159 @@
+---
+export const datos = {
+  nombre: "Cristian Diego Leyton",
+  telefono: "+54-387-5459077",
+  email: "leytoncristian96@gmail.com",
+  direccion: "Salta - Argentina",
+  link: "https://www.cdl.net.ar/",
+  resumen: `Soy Técnico en análisis de sistemas informáticos. Soy
+desarrollador web, trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. Actualmente trabajo dando
+soporte técnico a un sistema de gestión de farmacias. Considero que soy bastante hábil a la hora de
+resolver problemas de manera eficiente.
+`,
+  experiencia: [
+    {
+      title: "Auxiliar soporte técnico",
+      date: "Enero 2021 - Presente",
+      empresa: "Alfa Beta",
+      description: `Alfa beta cuenta con un sistema de gestión/facturación de farmacias (Winfarma), soy el encargado de instalar
+y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
+`,
+    },
+    {
+      title: "Técnico en reparación de PC",
+      date: "Enero 2019 - Enero 2021",
+      empresa: "Independiente",
+      description: `Trabajé de forma independiente reparando PC a clientes particulares. No soy especialista, pero conozco lo
+suficiente para instalar sistemas operativos y armar computadoras.
+`,
+    },
+  ],
+  aptitudes: [
+    "Pensamiento crítico",
+    "Juicio y toma de decisiones",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "PHP",
+    "MySQL",
+    "Astro",
+    "Laravel - Livewire",
+    "VUE",
+    "Tailwind - Bootstrap",
+    "GIT/GITHUB",
+  ],
+  formacion: [
+    {
+      title: "Técnico en Análisis de Sistemas informáticos",
+      date: "Febrero 2021 - Noviembre 2023",
+      description: "Instituto Superior del Milagro.",
+    },
+    {
+      title: "Educación Secundaria – Técnico Electrónico",
+      date: "Enero 2012 - Enero 2018",
+      description: "Escuela de Educación Técnica 'Albert Einstein'.",
+    },
+    {
+      title: "Inglés",
+      date: "Marzo 2024 - Presente",
+      description: "Curso de Inglés en la Universidad Nacional de Salta.",
+    },
+  ],
+  presentacion: `
+  Actualmente sigo practicando por mi cuenta creando algunos proyectos pequeños para ganar
+experiencia, y aprendiendo nuevas tecnologías de manera autodidacta.
+Puedes ver mi portafolio si lo deseas, deje el link en el recuadro arriba a la derecha. También estoy tomando clases particulares para mejorar mi inglés. Mientras, trabajo medio tiempo como soporte técnico.
+  `,
+};
+
+import ExperienceItemCV from "../components/ExperienceItemCV.astro";
+import avatar from "/public/assets/images/yo.png";
+import CVLayout from "../layouts/CVLayout.astro";
+---
+
+<CVLayout title="CV">
+  <div id="cv-content" class="grid grid-cols-3 gap-6 mx-auto p-8 max-w-4xl">
+    <section class="col-span-2">
+      <h1 class="text-3xl font-bold">{datos.nombre}</h1>
+      <section class="mt-4">
+        <h2 class="text-lg text-indigo-600 font-semibold">Resumen</h2>
+        <p>{datos.resumen}</p>
+      </section>
+
+      <h2 class="text-lg text-indigo-600 font-semibold mt-4">Experiencia</h2>
+      <section class="relative border-s border-gray-400">
+        <ul class="pl-5">
+          {datos.experiencia.map((exp) => <ExperienceItemCV {...exp} />)}
+        </ul>
+      </section>
+
+      <h2 class="text-lg mt-4 text-indigo-600 font-semibold">
+        Formación académica
+      </h2>
+      <section class="relative border-s border-gray-400">
+        <ul class="pl-5">
+          {datos.formacion.map((edu) => <ExperienceItemCV {...edu} />)}
+        </ul>
+      </section>
+    </section>
+
+    <section class="col-span-1">
+      <header
+        class="flex flex-wrap items-center border p-3 border-gray-300 relative mt-20"
+      >
+        <img
+          src={avatar.src}
+          alt="Foto"
+          class="size-28 rounded-full ml-4 absolute -top-20 right-5"
+        />
+        <div class="flex-1 text-xs">
+          <h2 class="text-lg text-indigo-600 font-semibold">Contacto</h2>
+          <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
+            <i class="bx bxs-phone"></i>
+            <a
+              href={`https://api.whatsapp.com/send/?phone=${datos.telefono}&text=Hola&type=phone_number&app_absent=0`}
+              target="_blank"
+              rel="noopener noreferrer">{datos.telefono}</a
+            >
+          </p>
+          <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
+            <i class="bx bxs-envelope"></i>
+            <a
+              href={`mailto:${datos.email}`}
+              target="_blank"
+              rel="noopener noreferrer">{datos.email}</a
+            >
+          </p>
+          <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
+            <i class="bx bxs-map"></i>
+            {datos.direccion}
+          </p>
+          <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
+            <i class="bx bx-link"></i>
+            <a href={datos.link} target="_blank" rel="noopener noreferrer"
+              >Portafolio</a
+            >
+          </p>
+        </div>
+      </header>
+
+      <section class="mt-4 border p-3 border-gray-300">
+        <h2 class="text-lg text-indigo-600 font-semibold">Aptitudes</h2>
+        <ul class="list-disc pl-5 text-sm text-gray-600">
+          {datos.aptitudes.map((apt) => <li>{apt}</li>)}
+        </ul>
+      </section>
+    </section>
+
+    {
+      datos.presentacion && (
+        <section class="col-span-3 -mt-4">
+          <h2 class="text-lg text-indigo-600 font-semibold">Más sobre mí</h2>
+          <p>{datos.presentacion}</p>
+        </section>
+      )
+    }
+  </div>
+</CVLayout>
+
+
