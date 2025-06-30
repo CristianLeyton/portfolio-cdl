@@ -96,13 +96,12 @@ export const TAGS = {
       </h3>
       <ul class="flex gap-2">
         <!--  No se porque da error pero funciona como quiero  -->
-        {tags.map((tag) => (
+        {tags?.map((tag) => (
           <li
             class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${TAGS[tag].class}`}
           >
-            
-            <TAGS[tag].icon class="size-4"/>
-            {TAGS[tag].name}
+            <TAGS[tag].icon class="w-4 h-4" />
+            <span class="text-xs">{TAGS[tag].name}</span>
           </li>
         ))}
       </ul>

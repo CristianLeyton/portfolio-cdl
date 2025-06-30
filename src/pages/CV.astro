@@ -62,12 +62,17 @@ import { datos } from "../layouts/CVLayout.astro";
             <i class="bx bxs-map"></i>
             {datos.direccion}
           </p>
-          <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
+
+          {
+            datos.link && (
+            <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
             <i class="bx bx-link"></i>
             <a href={datos.link} target="_blank" rel="noopener noreferrer"
               >Portafolio</a
             >
-          </p>
+          </p>)
+          }
+          
         </div>
       </header>
 

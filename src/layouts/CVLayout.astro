@@ -6,11 +6,16 @@ export const datos = {
   telefono: "+54-387-5459077",
   email: "leytoncristian96@gmail.com",
   direccion: "Salta - Argentina",
-  link: "https://www.cdl.net.ar/",
-  resumen: `Soy Técnico en análisis de sistemas informáticos. Soy
+  /*   link: "https://www.cdl.net.ar/", */
+  link: "",
+  /*   resumen: `Soy Técnico en análisis de sistemas informáticos. Soy
 desarrollador web, trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. Actualmente trabajo dando
 soporte técnico a un sistema de gestión de farmacias. Considero que soy bastante hábil a la hora de
 resolver problemas de manera eficiente.
+`, */
+  resumen: `Soy Técnico en análisis de sistemas informáticos. Actualmente trabajo dando
+soporte técnico a un sistema de gestión de farmacias. Considero que soy bastante hábil a la hora de
+resolver problemas de manera eficiente. Tengo experiencia brindando soporte técnico. Tambien trabajé con redes e instalación de todo tipo de impresoras. 
 `,
   experiencia: [
     {
@@ -26,11 +31,11 @@ y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
       date: "Enero 2019 - Enero 2021",
       empresa: "Independiente",
       description: `Trabajé de forma independiente reparando PC a clientes particulares. No soy especialista, pero conozco lo
-suficiente para instalar sistemas operativos y armar computadoras.
+suficiente para instalar sistemas operativos y armar o actualizar computadoras.
 `,
     },
   ],
-  aptitudes: [
+  /*   aptitudes: [
     "Pensamiento crítico",
     "Juicio y toma de decisiones",
     "HTML",
@@ -43,6 +48,15 @@ suficiente para instalar sistemas operativos y armar computadoras.
     "VUE",
     "Tailwind - Bootstrap",
     "GIT/GITHUB",
+  ], */
+  aptitudes: [
+    "Pensamiento crítico",
+    "Juicio y toma de decisiones",
+    "Instalaciones de Hardware",
+    "Instalaciones de Software",
+    "Redes",
+    "Sistemas operativos",
+    "Atención al cliente",
   ],
   formacion: [
     {
@@ -61,36 +75,44 @@ suficiente para instalar sistemas operativos y armar computadoras.
       description: "Curso de Inglés en la Universidad Nacional de Salta.",
     },
   ],
-  presentacion: `
+  /*   presentacion: `
   Actualmente sigo practicando por mi cuenta creando algunos proyectos pequeños para ganar
 experiencia, y aprendiendo nuevas tecnologías de manera autodidacta.
 Puedes ver mi portafolio si lo deseas, deje el link arriba a la derecha. También estoy tomando clases particulares para mejorar mi inglés. Mientras, trabajo medio tiempo como soporte técnico.
-  `,
+  `, */
+  presentacion: `
+  Tengo 4 años de experiencia brindando soporte técnico. Se me da bien identificar la causa de un problema y encontrar una solución rápida. He trabajado en la instalación, configuración y mantenimiento de sistemas operativos como Windows y Linux, lo que me ha permitido desarrollar un conocimiento sólido en la gestión de software y hardware. Además, tengo experiencia en la resolución de problemas relacionados con redes e impresoras.`,
 };
 ---
 
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="description" content="Portafolio - Cristian Diego Leyton" />
-  <meta name="keywords" content="HTML, CSS, JavaScript, Portafolio, Cristian, Diego, Leyton, Astro, Tailwind" />
-  <meta name="author" content="Cristian Diego Leyton" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/main.css?v=1" />
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <title>{title}</title>
-</head>
-<body>
-    <slot/>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Portafolio - Cristian Diego Leyton" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Portafolio, Cristian, Diego, Leyton, Astro, Tailwind"
+    />
+    <meta name="author" content="Cristian Diego Leyton" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css?v=1" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style>
   @media print {
     @page {
       size: A4;
-      margin: 3mm; /* Ajusta el margen según necesites */
+      margin: 1mm; /* Ajusta el margen según necesites */
     }
 
     /* Oculta elementos no deseados al imprimir */
