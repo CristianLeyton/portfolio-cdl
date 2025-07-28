@@ -3,7 +3,7 @@ layout: "../../layouts/ProjectLayout.astro"
 order: 6
 title: "Sistema | Landing Page"
 description: "Landing page para un sistema de gestión de farmacias, con un buscador de precios de medicamentos incorpodaro, la armé como propuesta para mejorar la actual."
-link: "https://winfarma-landing.vercel.app/"
+link: "https://winfarma.vercel.app/"
 github: "https://github.com/CristianLeyton/winfarma-landing"
 image: "/assets/images/sistema.webp"
 tags: ["ASTRO", "TAILWIND", "JAVASCRIPT"]
@@ -14,7 +14,7 @@ Es una landing page para ofrecer un sistema de gestón de farmacias. La hice par
 ![image](https://github.com/user-attachments/assets/95ca8019-0786-453c-a368-81be28de522f)
 
 Acceder al sitio:
-<https://winfarma-landing.vercel.app/>
+<https://winfarma.vercel.app/>
 
 Web oficial del gobierno:
 <https://www.argentina.gob.ar/precios-de-medicamentos/>
