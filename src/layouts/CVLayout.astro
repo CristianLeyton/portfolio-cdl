@@ -1,43 +1,39 @@
 ---
 const { title } = Astro.props;
 
-export const datos = {
+export const datosDesarrollador = {
   nombre: "Cristian Diego Leyton",
   telefono: "+54-387-5459077",
   email: "leytoncristian96@gmail.com",
   direccion: "Salta - Argentina",
-  /*   link: "https://www.cdl.net.ar/", */
-  link: "",
-  /*   resumen: `Soy Técnico en análisis de sistemas informáticos. Soy
-desarrollador web, trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. Actualmente trabajo dando
-soporte técnico a un sistema de gestión de farmacias. Considero que soy bastante hábil a la hora de
-resolver problemas de manera eficiente.
-`, */
-  resumen: `Soy Técnico en análisis de sistemas informáticos. Actualmente trabajo dando
-soporte técnico a un sistema de gestión de farmacias. Considero que soy bastante hábil a la hora de
-resolver problemas de manera eficiente. Tengo experiencia brindando soporte técnico. Tambien trabajé con redes e instalación de todo tipo de impresoras. 
+  link: "https://www.cdl.net.ar/",
+  resumen: `Soy técnico en análisis de sistemas informáticos y 
+  desarrollador web, trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. 
+  Trabajé 4 años brindando soporte técnico a un sistema de gestión de farmacias. 
+  Me destaco por ser resolutivo, atento a las personas y comunicativo para resolver 
+  y prevenir problemas.
 `,
   experiencia: [
     {
       title: "Auxiliar soporte técnico",
-      date: "Enero 2021 - Presente",
+      date: "Enero 2021 - Agosto 2024",
       empresa: "Alfa Beta",
-      description: `Alfa beta cuenta con un sistema de gestión/facturación de farmacias (Winfarma), soy el encargado de instalar
-y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
+      description: `Alfa beta cuenta con un sistema de gestión/facturación de farmacias (Winfarma), 
+      fuí el encargado de instalar y dar mantenimiento 
+      a las farmacias de Salta que utilizan dicho sistema.
 `,
     },
     {
       title: "Técnico en reparación de PC",
       date: "Enero 2019 - Enero 2021",
       empresa: "Independiente",
-      description: `Trabajé de forma independiente reparando PC a clientes particulares. No soy especialista, pero conozco lo
-suficiente para instalar sistemas operativos y armar o actualizar computadoras.
+      description: `Trabajé de forma independiente reparando PC a clientes particulares. 
+      Tengo experiencia instalando sistemas operativos, armando, 
+      actualizando y dandole mantenimiento a equipos.
 `,
     },
   ],
-  /*   aptitudes: [
-    "Pensamiento crítico",
-    "Juicio y toma de decisiones",
+  aptitudes: [
     "HTML",
     "CSS",
     "JavaScript",
@@ -48,15 +44,8 @@ suficiente para instalar sistemas operativos y armar o actualizar computadoras.
     "VUE",
     "Tailwind - Bootstrap",
     "GIT/GITHUB",
-  ], */
-  aptitudes: [
-    "Pensamiento crítico",
-    "Juicio y toma de decisiones",
-    "Instalaciones de Hardware",
-    "Instalaciones de Software",
-    "Redes",
-    "Sistemas operativos",
-    "Atención al cliente",
+    "Resolutivo y orientado a resultados",
+    "Autonomía, comunicativo y colaborativo",
   ],
   formacion: [
     {
@@ -65,23 +54,94 @@ suficiente para instalar sistemas operativos y armar o actualizar computadoras.
       description: "Instituto Superior del Milagro.",
     },
     {
+      title: "Inglés",
+      date: "Marzo 2024 - Presente",
+      description: "Curso de Inglés en la Universidad Nacional de Salta.",
+    },
+    {
       title: "Educación Secundaria – Técnico Electrónico",
       date: "Enero 2012 - Enero 2018",
       description: "Escuela de Educación Técnica 'Albert Einstein'.",
+    },
+  ],
+  presentacion: `
+  Me destaco por mi capacidad para comunicarme de forma clara y  
+  escuchar activamente, facilitando la resolución y prevención de problemas.
+  Actualmente sigo practicando por mi cuenta creando algunos proyectos pequeños para ganar
+  experiencia, aprendiendo nuevas tecnologías de manera autodidacta y trabajando como freelance.
+  Puedes ver mi portafolio si lo deseas, deje el link arriba a la derecha.
+`,
+};
+
+export const datosTecnico = {
+  nombre: "Cristian Diego Leyton",
+  telefono: "+54-387-5459077",
+  email: "leytoncristian96@gmail.com",
+  direccion: "Salta - Argentina",
+  link: "",
+  resumen: `Soy técnico en análisis de sistemas informáticos, y técnico electrónico. Trabajé 4 años brindando
+soporte técnico a un sistema de gestión de farmacias. 
+Me destaco por ser resolutivo, atento a las personas y comunicativo para resolver y prevenir problemas técnicos.
+`,
+  experiencia: [
+    {
+      title: "Auxiliar soporte técnico",
+      date: "Enero 2021 - Agosto 2025",
+      empresa: "Alfa Beta",
+      description: `Alfa beta cuenta con un sistema de gestión/facturación de farmacias (Winfarma), fuí el encargado de instalar
+y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
+`,
+    },
+    {
+      title: "Técnico en reparación de PC",
+      date: "Enero 2019 - Enero 2021",
+      empresa: "Independiente",
+      description: `Trabajé de forma independiente reparando PC a clientes particulares. 
+      Tengo experiencia instalando sistemas operativos, armando, actualizando y dandole mantenimiento a equipos.`,
+    },
+  ],
+
+  aptitudes: [
+    "Escucha atenta, y entendimiento del cliente",
+    "Atención al cliente",
+    "Instalaciones de Hardware",
+    "Instalaciones de Software",
+    "Redes",
+    "Sistemas operativos",
+    "Autonomía y colaborativo",
+    "Resolutivo y orientado a resultados",
+  ],
+  formacion: [
+    {
+      title: "Técnico en Análisis de Sistemas informáticos",
+      date: "Febrero 2021 - Diciembre 2023",
+      description: "Instituto Superior del Milagro.",
     },
     {
       title: "Inglés",
       date: "Marzo 2024 - Presente",
       description: "Curso de Inglés en la Universidad Nacional de Salta.",
     },
+    /*     {
+      title: "Técnico en reparación PC's",
+      date: "Agosto 2012 - Diciembre 2012",
+      description: "Fundación Roberto Romero",
+    }, */
+    {
+      title: "Educación Secundaria – Técnico Electrónico",
+      date: "Enero 2012 - Enero 2018",
+      description: "Escuela de Educación Técnica 'Albert Einstein'.",
+    },
   ],
-  /*   presentacion: `
-  Actualmente sigo practicando por mi cuenta creando algunos proyectos pequeños para ganar
-experiencia, y aprendiendo nuevas tecnologías de manera autodidacta.
-Puedes ver mi portafolio si lo deseas, deje el link arriba a la derecha. También estoy tomando clases particulares para mejorar mi inglés. Mientras, trabajo medio tiempo como soporte técnico.
-  `, */
+
   presentacion: `
-  Tengo 4 años de experiencia brindando soporte técnico. Se me da bien identificar la causa de un problema y encontrar una solución rápida. He trabajado en la instalación, configuración y mantenimiento de sistemas operativos como Windows y Linux, lo que me ha permitido desarrollar un conocimiento sólido en la gestión de software y hardware. Además, tengo experiencia en la resolución de problemas relacionados con redes e impresoras.`,
+    Tengo 4 años de experiencia brindando soporte técnico. Se me da bien identificar la causa de un problema 
+    y encontrar una solución rápida. He trabajado en la instalación, 
+    configuración y mantenimiento de equipos con Windows y Linux, 
+    lo que me ha permitido desarrollar un conocimiento sólido en la gestión de software y hardware. 
+    Además, tengo experiencia en la resolución de problemas relacionados con redes e impresoras. 
+    Me destaco por mi capacidad para comunicarme de forma clara, escuchar activamente y asesorar a los usuarios, 
+    facilitando la resolución y prevención de problemas.`,
 };
 ---
 

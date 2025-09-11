@@ -2,26 +2,25 @@
 import ExperienceItemCV from "../components/ExperienceItemCV.astro";
 import avatar from "/public/assets/images/fotoCV.png";
 import CVLayout from "../layouts/CVLayout.astro";
-import { datosDesarrollador } from "../layouts/CVLayout.astro";
+import { datosTecnico } from "../layouts/CVLayout.astro";
 ---
 
-<CVLayout title="CV">
-  <div id="cv-content" class="grid grid-cols-3 gap-6 mx-auto p-8 max-w-4xl">
+<CVLayout title="CV-T">
+  <div
+    id="cv-content"
+    class="grid grid-cols-3 gap-6 mx-auto py-4 px-8 max-w-4xl"
+  >
     <section class="col-span-2">
-      <h1 class="text-3xl font-bold">{datosDesarrollador.nombre}</h1>
+      <h1 class="text-3xl font-bold">{datosTecnico.nombre}</h1>
       <section class="mt-4">
         <h2 class="text-lg text-indigo-600 font-semibold">Resumen</h2>
-        <p>{datosDesarrollador.resumen}</p>
+        <p>{datosTecnico.resumen}</p>
       </section>
 
       <h2 class="text-lg text-indigo-600 font-semibold mt-4">Experiencia</h2>
       <section class="relative border-s border-gray-400">
         <ul class="pl-5">
-          {
-            datosDesarrollador.experiencia.map((exp) => (
-              <ExperienceItemCV {...exp} />
-            ))
-          }
+          {datosTecnico.experiencia.map((exp) => <ExperienceItemCV {...exp} />)}
         </ul>
       </section>
 
@@ -30,21 +29,16 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
       </h2>
       <section class="relative border-s border-gray-400">
         <ul class="pl-5">
-          {
-            datosDesarrollador.formacion.map((edu) => (
-              <ExperienceItemCV {...edu} />
-            ))
-          }
+          {datosTecnico.formacion.map((edu) => <ExperienceItemCV {...edu} />)}
         </ul>
       </section>
     </section>
 
     <section class="col-span-1">
       <img
-        src={avatar.src}
-        alt="Foto"
-        class="size-44 rounded-full bg-gray-400 mx-auto"
-      />
+      src={avatar.src}
+      alt="Foto"
+      class="size-44 rounded-full bg-gray-400  mx-auto ">
       <header
         class="flex flex-wrap items-center border p-3 border-gray-300 relative mt-4"
       >
@@ -53,30 +47,30 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
           <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
             <i class="bx bxs-phone"></i>
             <a
-              href={`https://api.whatsapp.com/send/?phone=${datosDesarrollador.telefono}&text=Hola&type=phone_number&app_absent=0`}
+              href={`https://api.whatsapp.com/send/?phone=${datosTecnico.telefono}&text=Hola&type=phone_number&app_absent=0`}
               target="_blank"
-              rel="noopener noreferrer">{datosDesarrollador.telefono}</a
+              rel="noopener noreferrer">{datosTecnico.telefono}</a
             >
           </p>
           <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
             <i class="bx bxs-envelope"></i>
             <a
-              href={`mailto:${datosDesarrollador.email}`}
+              href={`mailto:${datosTecnico.email}`}
               target="_blank"
-              rel="noopener noreferrer">{datosDesarrollador.email}</a
+              rel="noopener noreferrer">{datosTecnico.email}</a
             >
           </p>
           <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
             <i class="bx bxs-map"></i>
-            {datosDesarrollador.direccion}
+            {datosTecnico.direccion}
           </p>
 
           {
-            datosDesarrollador.link && (
+            datosTecnico.link && (
               <p class="text-gray-600 flex flex-nowrap gap-1 items-center text-sm">
                 <i class="bx bx-link" />
                 <a
-                  href={datosDesarrollador.link}
+                  href={datosTecnico.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -91,16 +85,16 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
       <section class="mt-4 border p-3 border-gray-300">
         <h2 class="text-lg text-indigo-600 font-semibold">Aptitudes</h2>
         <ul class="list-disc pl-5 text-sm text-gray-600">
-          {datosDesarrollador.aptitudes.map((apt) => <li>{apt}</li>)}
+          {datosTecnico.aptitudes.map((apt) => <li>{apt}</li>)}
         </ul>
       </section>
     </section>
 
     {
-      datosDesarrollador.presentacion && (
+      datosTecnico.presentacion && (
         <section class="col-span-3 -mt-4">
           <h2 class="text-lg text-indigo-600 font-semibold">Más sobre mí</h2>
-          <p>{datosDesarrollador.presentacion}</p>
+          <p>{datosTecnico.presentacion}</p>
         </section>
       )
     }

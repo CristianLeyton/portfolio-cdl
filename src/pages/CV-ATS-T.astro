@@ -1,47 +1,52 @@
 ---
 import CVLayout from "../layouts/CVLayout.astro";
-import { datosDesarrollador } from "../layouts/CVLayout.astro";
+import { datosTecnico } from "../layouts/CVLayout.astro";
 ---
 
-<CVLayout title="CV-ATS">
+<CVLayout title="CV-ATS-T">
   <div id="cv-content" class="max-w-4xl mx-auto p-8">
     <section class="mb-6">
-      <h1 class="font-bold mb-4 text-3xl text-center">{datosDesarrollador.nombre}</h1>
+      <h1 class="font-bold mb-4 text-3xl text-center">{datosTecnico.nombre}</h1>
       <div class="flex justify-between text-gray-600 font-semibold">
         <a
-          href={`mailto:${datosDesarrollador.email}`}
+          href={`mailto:${datosTecnico.email}`}
           target="_blank"
-          rel="noopener noreferrer">Email: {datosDesarrollador.email}</a
+          rel="noopener noreferrer">Email: {datosTecnico.email}</a
         >
-        <p class="">Ubicación: {datosDesarrollador.direccion}</p>
+        <p class="">Ubicación: {datosTecnico.direccion}</p>
       </div>
 
       <div class="flex justify-between text-gray-600 font-semibold">
         <a
-          href={`https://api.whatsapp.com/send/?phone=${datosDesarrollador.telefono}&text=Hola&type=phone_number&app_absent=0`}
+          href={`https://api.whatsapp.com/send/?phone=${datosTecnico.telefono}&text=Hola&type=phone_number&app_absent=0`}
           target="_blank"
-          rel="noopener noreferrer">Contacto: {datosDesarrollador.telefono}</a>
-        
+          rel="noopener noreferrer">Contacto: {datosTecnico.telefono}</a
+        >
 
         {
-
+          datosTecnico.link && (
+            <a
+              href={datosTecnico.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portafolio: {datosTecnico.link}
+            </a>
+          )
         }
-        <a href={datosDesarrollador.link} target="_blank" rel="noopener noreferrer"
-        >Portafolio: {datosDesarrollador.link}</a
-        >
       </div>
     </section>
 
     <section class="mt-4">
       <h2 class="text-xl font-semibold">Resumen</h2>
-      <p class="mt-2 text-gray-700">{datosDesarrollador.resumen}</p>
+      <p class="mt-2 text-gray-700">{datosTecnico.resumen}</p>
     </section>
 
     <section class="mt-4">
       <h2 class="text-xl font-semibold">Experiencia</h2>
       <ul class="list-disc pl-5 mt-2">
         {
-          datosDesarrollador.experiencia.map((exp) => (
+          datosTecnico.experiencia.map((exp) => (
             <li class="mb-2">
               <span class="flex justify-between">
                 <span>
@@ -60,7 +65,7 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
       <h2 class="text-xl font-semibold">Formación académica</h2>
       <ul class="list-disc pl-5 mt-2">
         {
-          datosDesarrollador.formacion.map((edu) => (
+          datosTecnico.formacion.map((edu) => (
             <li class="mb-2">
               <span class="flex justify-between">
                 <strong>{edu.title}</strong>{" "}
@@ -76,15 +81,19 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
     <section class="mt-4">
       <h2 class="text-xl font-semibold">Aptitudes</h2>
       <ul class="list-disc pl-5 mt-2 grid grid-cols-2">
-        {datosDesarrollador.aptitudes.map((apt) => <li class="text-gray-700">{apt}</li>)}
+        {
+          datosTecnico.aptitudes.map((apt) => (
+            <li class="text-gray-700">{apt}</li>
+          ))
+        }
       </ul>
     </section>
 
     {
-      datosDesarrollador.presentacion && (
+      datosTecnico.presentacion && (
         <section class="mt-4">
           <h2 class="text-xl font-semibold">Más sobre mí</h2>
-          <p class="mt-2 text-gray-700">{datosDesarrollador.presentacion}</p>
+          <p class="mt-2 text-gray-700">{datosTecnico.presentacion}</p>
         </section>
       )
     }
