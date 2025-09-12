@@ -7,6 +7,7 @@ link: "https://page-cosmetica.vercel.app/"
 github: "https://github.com/CristianLeyton/landing-cosmetica"
 image: "/assets/images/estetica.webp"
 tags: [ASTRO, TAILWIND]
+hidden: true
 ---
 
 Se supone que la hice para una estetica de mi ciudad, pero al final no.

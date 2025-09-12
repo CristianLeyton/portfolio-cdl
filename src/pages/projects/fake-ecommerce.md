@@ -7,6 +7,7 @@ link: "https://ecommerce-fake-cdl.vercel.app/"
 github: "https://github.com/CristianLeyton/fake-ecommerce"
 image: "/assets/images/fake-ecommerce.webp"
 tags: [STRAPI , ASTRO, TAILWIND]
+hidden: false
 ---
 
 Le puse como titulo "Fake-Ecommerce" porque para que sea un Ecommerce deberia tener una pasarela de pago. Este sitio solo te genera una **"Lista de Deseos"**. Es como que armar un presupuesto que al final lo envias por WhatsApp o Correo para confirmar el pedido a la empresa.

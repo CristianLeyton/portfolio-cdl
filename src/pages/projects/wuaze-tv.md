@@ -7,6 +7,7 @@ link: "https://wuaze.cdl.com.ar/"
 github: "https://github.com/CristianLeyton/pagina-de-noticias-portfolio"
 image: "/assets/images/canal.webp"
 tags: [LARAVEL, VUE, TAILWIND]
+hidden: false
 ---
 
 **Acceder al sitio:**

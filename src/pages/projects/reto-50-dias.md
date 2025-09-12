@@ -7,6 +7,7 @@ link: "https://reto-50-dias.vercel.app/"
 github: "https://github.com/CristianLeyton/proyectos-reto-50-dias"
 image: "/assets/images/50miniproyectos.webp"
 tags: ["HTML", "CSS", "JAVASCRIPT", "ASTRO"]
+hidden: false
 ---
 
 Además aproveche para practicar con astro, cree la web para mostrar los proyectos de manera ordenada y de paso agregar algunos, en un futuro, fácilmente.

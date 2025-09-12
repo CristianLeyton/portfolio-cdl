@@ -7,6 +7,7 @@ link: "https://sistema-landing-medicamentos.vercel.app/"
 github: "https://github.com/CristianLeyton/winfarma-landing"
 image: "/assets/images/sistema.webp"
 tags: ["ASTRO", "TAILWIND", "JAVASCRIPT"]
+hidden: false
 ---
 
 Es una landing page para ofrecer un sistema de gestón de farmacias. La hice para practicar, me inspiro una web que hizo el gobierno para consultar los precios de medicamentos. Asi que usando su API replique su buscador de precios. Es completamente funcional y trae precios vigentes.

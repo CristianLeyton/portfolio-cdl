@@ -8,31 +8,35 @@ export const datosDesarrollador = {
   direccion: "Salta - Argentina",
   link: "https://www.cdl.net.ar/",
   resumen: `Soy técnico en análisis de sistemas informáticos y 
-  desarrollador web, trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. 
+  desarrollador web full stack. Trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. 
   Trabajé 4 años brindando soporte técnico a un sistema de gestión de farmacias. 
-  Me destaco por ser resolutivo, atento a las personas y comunicativo para resolver 
-  y prevenir problemas.
+  Me destaco por ser resolutivo, atento y comunicativo.
 `,
-  experiencia: [
-    {
-      title: "Auxiliar soporte técnico",
-      date: "Enero 2021 - Agosto 2025",
-      empresa: "Alfa Beta",
-      description: `Alfa beta cuenta con un sistema de gestión/facturación de farmacias (Winfarma), 
-      fuí el encargado de instalar y dar mantenimiento 
-      a las farmacias de Salta que utilizan dicho sistema.
-`,
-    },
-    {
-      title: "Técnico en reparación de PC",
-      date: "Enero 2019 - Enero 2021",
-      empresa: "Independiente",
-      description: `Trabajé de forma independiente reparando PC a clientes particulares. 
-      Tengo experiencia instalando sistemas operativos, armando, 
-      actualizando y dandole mantenimiento a equipos.
-`,
-    },
-  ],
+experiencia: [
+  {
+    title: "Desarrollador Web Freelance",
+    date: "Febrero 2025 - Actualidad",
+    empresa: "Independiente",
+    description: `Diseño y desarrollo de soluciones digitales personalizadas para clientes, 
+    incluyendo sistemas de gestión de alumnos, landing pages orientadas a marketing 
+    y tiendas online.`,
+  },
+  {
+    title: "Auxiliar de Soporte Técnico",
+    date: "Enero 2021 - Agosto 2025",
+    empresa: "Alfa Beta",
+    description: `Instalación, configuración y mantenimiento del sistema de gestión de farmacias (Winfarma) 
+    en diferentes puntos de la provincia de Salta. 
+    Asistencia técnica remota y presencial.`,
+  },
+  {
+    title: "Técnico en Reparación de PC",
+    date: "Enero 2019 - Enero 2021",
+    empresa: "Independiente",
+    description: `Mantenimiento preventivo y correctivo de equipos de escritorio y portátiles, 
+    instalación de sistemas operativos y armado/actualización de hardware.`,
+  },
+],
   aptitudes: [
     "HTML",
     "CSS",
@@ -163,7 +167,7 @@ y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="text-pretty">
     <slot />
   </body>
 </html>

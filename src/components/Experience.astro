@@ -2,22 +2,9 @@
 import ExperienceItem from "../components/ExperienceItem.astro";
 import Pill from "./Pill.astro";
 
-const EXPERIENCIE = [
-{
-    date: "Enero 2021",
-    title: "Soporte Técnico",
-    description: `Actualmente trabajo con un sistema de gestión de farmacias (Winfarma), soy el encargado de instalar
-    y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
-    `
-  },
-  {
-    date: "Marzo 2019",
-    title: "Técnico en reparación de PC",
-    description: `Trabaje de forma independiente reparando PC's a clientes particulares. No soy especialista, pero conozco lo
-    suficiente para instalar sistemas operativos y armar equipos.
-    `
-  }
-];
+import { datosDesarrollador } from "../layouts/CVLayout.astro";
+
+const EXPERIENCIE = datosDesarrollador.experiencia;
 ---
 
 <ol class="relative border-s border-gray-500 dark:border-gray-300">
@@ -31,5 +18,5 @@ const EXPERIENCIE = [
 </ol>
 
 <span class="flex justify-center">
-<Pill href="/assets/files/CristianLeyton_CV.pdf"> <i class='bx bxs-file text-xl' ></i> Descargar CV (PDF) </Pill>
+<Pill href="/assets/files/Cristian_Leyton_CV.pdf"> <i class='bx bxs-file text-xl' ></i> Descargar CV (PDF) </Pill>
 </span>

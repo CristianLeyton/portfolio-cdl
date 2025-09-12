@@ -7,14 +7,14 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
 
 <CVLayout title="CV">
   <div id="cv-content" class="grid grid-cols-3 gap-6 mx-auto py-4 px-8 max-w-4xl">
-    <section class="col-span-2">
+    <section class="col-span-2 flex flex-col gap-2">
       <h1 class="text-3xl font-bold">{datosDesarrollador.nombre}</h1>
-      <section class="mt-4">
+      <section class="">
         <h2 class="text-lg text-indigo-600 font-semibold">Resumen</h2>
         <p>{datosDesarrollador.resumen}</p>
       </section>
 
-      <h2 class="text-lg text-indigo-600 font-semibold mt-4">Experiencia</h2>
+      <h2 class="text-lg text-indigo-600 font-semibold">Experiencia</h2>
       <section class="relative border-s border-gray-400">
         <ul class="pl-5">
           {
@@ -25,7 +25,7 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
         </ul>
       </section>
 
-      <h2 class="text-lg mt-4 text-indigo-600 font-semibold">
+      <h2 class="text-lg text-indigo-600 font-semibold">
         Formación académica
       </h2>
       <section class="relative border-s border-gray-400">

@@ -1,7 +1,10 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-const PROJECTS = await Astro.glob('../pages/projects/*.md');
-PROJECTS.sort((a, b) => b.frontmatter.order - a.frontmatter.order );
+let PROJECTS = await Astro.glob('../pages/projects/*.md');
+
+PROJECTS = PROJECTS
+  .sort((a, b) => b.frontmatter.order - a.frontmatter.order)
+  .filter(project => project.frontmatter.hidden == false);
 ---
 
 {

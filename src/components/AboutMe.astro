@@ -1,5 +1,6 @@
 ---
 import Pill from "./Pill.astro";
+import foto from "../../public/assets/images/fotoCV.png";
 
 const logo = "CDL";
 ---
@@ -18,10 +19,18 @@ const logo = "CDL";
 
       <p>
         Soy <span class="text-indigo-400"
-          >Técnico en análisis de sistemas informáticos.</span
-        > Tengo conocimientos en desarrollo web, en backend con Laravel y en frontend
-        con Astro. Considero que soy bastante hábil a la hora de resolver problemas
-        de manera eficiente.
+          >técnico en análisis de sistemas informáticos</span
+        > y <span class="text-indigo-400">desarrollador web</span>. Trabajo con frameworks como 
+        Laravel, Livewire, Vue y Astro. Y continuo aprendiendo nuevas tecnologías.
+
+        <br /><br />
+        Me destaco por ser <span class="text-indigo-400">resolutivo</span>,
+        <span class="text-indigo-400">atento a las personas</span> y
+        <span class="text-indigo-400">comunicativo</span> para resolver y prevenir problemas.
+
+        <br /><br />
+        Actualmente sigo practicando por mi cuenta creando algunos proyectos pequeños para ganar
+        experiencia, aprendiendo nuevas tecnologías, mejorando mi inglés y trabajando como freelance.
       </p>
 
       <p>
@@ -35,7 +44,7 @@ const logo = "CDL";
     </div>
     <img
       class="size-56 border border-gray-600 p-2 rounded-md order-1 md:order-2"
-      src="/assets/images/yo.png"
+      src={foto.src}
       alt="Cristian Diego Leyton"
     />
   </div>
