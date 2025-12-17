@@ -1,9 +1,9 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
-order: 7
+order: 8
 title: "Mascotas perdidas | Web"
 description: "Es una aplicación web dedicada a la comunidad, diseñada para facilitar la búsqueda y el reencuentro de mascotas perdidas."
-link: "https://encontratumascota.cdl.com.ar/"
+link: "https://mascotas.cdl.net.ar/"
 github: "https://github.com/CristianLeyton/encontra-tu-mascota"
 image: "/assets/images/mascotas.webp"
 tags: ["LARAVEL", "LIVEWIRE" ,"TAILWIND", "JAVASCRIPT"]
@@ -11,6 +11,7 @@ hidden: false
 ---
 
 # Encontrá Tu Mascota
+
 ![image](https://github.com/user-attachments/assets/ac65923f-ccb6-49c3-a36c-c22d63b86100)
 
 **Encontrá Tu Mascota** es una aplicación web dedicada a la comunidad, diseñada para facilitar la búsqueda y el reencuentro de mascotas perdidas. Los usuarios pueden publicar avisos de mascotas que han perdido o encontrado, proporcionando detalles y fotos para ayudar a que vuelvan a casa sanas y salvas.  
@@ -19,7 +20,7 @@ La idea fue propuesta por SaltaDev para la ciudad de Salta, Argentina.
 
 [Ver Propuesta](https://daffodil-bandicoot-bca.notion.site/mini-hackathon) - daffodil-bandicoot-bca.notion.site/mini-hackathon  
 
-[Ver Demo](https://encontratumascota.cdl.com.ar/) - encontratumascota.cdl.com.ar  
+[Ver Demo](https://mascotas.cdl.net.ar/) - mascotas.cdl.net.ar  
 
 ## ✨ Funcionalidades Principales
 

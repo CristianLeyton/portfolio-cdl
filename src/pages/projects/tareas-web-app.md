@@ -3,7 +3,7 @@ layout: "../../layouts/ProjectLayout.astro"
 order: 1
 title: "Tareas | Web App"
 description: "Una aplicación donde podes administrar tus tareas pendientes, consultar las completadas y organizarlas con un sistema de etiquetas."
-link: "https://tareas.cdl.com.ar/"
+link: "https://tareas.cdl.net.ar/"
 github: "https://github.com/CristianLeyton/app-tareas"
 image: "/assets/images/tareas.webp"
 tags: [LARAVEL, LIVEWIRE, TAILWIND]
@@ -24,10 +24,8 @@ Esta hecha en Laravel usando Livewire, con una base de datos MySQL, traté de ha
 ![image](https://github.com/user-attachments/assets/4d1d906a-df22-496e-8689-9a0539fe4eb1)
 
 Acceder al sitio:
-<https://tareas.cdl.com.ar/>
+<https://tareas.cdl.net.ar/>
 
 > Usuario: <test@mail.com>
->
-> Contraseña: test1234
 
-Otra vez me limita un poco el no poder pagar un host. Espero poder alojarlo en un mejor host pronto.
+> Contraseña: test1234

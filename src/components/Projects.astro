@@ -4,7 +4,7 @@ let PROJECTS = await Astro.glob('../pages/projects/*.md');
 
 PROJECTS = PROJECTS
   .sort((a, b) => b.frontmatter.order - a.frontmatter.order)
-  .filter(project => project.frontmatter.hidden == false);
+  .filter(project => project.frontmatter.hidden == false); //Oculto las que tienen hidden: true
 ---
 
 {

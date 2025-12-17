@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
-order: 6
+order: 5
 title: "Sistema | Landing Page"
 description: "Landing page para un sistema de gestión de farmacias, con un buscador de precios de medicamentos incorpodaro, la armé como propuesta para mejorar la actual."
 link: "https://sistema-landing-medicamentos.vercel.app/"

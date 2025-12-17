@@ -10,6 +10,7 @@ import HTMLIcon from "./icons/HTMLIcon.astro";
 import CSSIcon from "./icons/CSSIcon.astro";
 import VueIcon from "./icons/VueIcon.astro";
 import StrapiIcon from "./icons/StrapiIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
 
 const { url, link, image, title, description, tags, github } = Astro.props;
 
@@ -54,6 +55,12 @@ export const TAGS = {
     name: "Livewire",
     icon: LivewireIcon,
     class: "bg-pink-800 text-white dark:bg-pink-700",
+  },
+
+  REACT: {
+    name: "React",
+    icon: ReactIcon,
+    class: "bg-cyan-800 text-white dark:bg-cyan-700",
   },
 
   TAILWIND: {

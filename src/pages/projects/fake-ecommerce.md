@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/ProjectLayout.astro"
-order: 5
+order: 6
 title: "FakeEcommerce | Web Site"
 description: "Un sitio donde se puede armar una 'Lista de compras', y luego enviarla a la empresa para finalizar la compra. Usé Astro para el frontend y Strapi para el backend."
 link: "https://ecommerce-fake-cdl.vercel.app/"
