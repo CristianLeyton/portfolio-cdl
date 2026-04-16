@@ -10,7 +10,7 @@ tags: ["LARAVEL", "LIVEWIRE" ,"TAILWIND", "JAVASCRIPT"]
 hidden: false
 ---
 
-# Encontrá Tu Mascota
+## Encontrá Tu Mascota
 
 ![image](https://github.com/user-attachments/assets/ac65923f-ccb6-49c3-a36c-c22d63b86100)
 
