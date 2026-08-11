@@ -55,6 +55,18 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
                 <span class="text-sm text-gray-500">| {exp.date}</span>{" "}
               </span>
               <p class="text-gray-700">{exp.description}</p>
+
+              {
+                exp.tasks && (
+                  <ul class="list-disc pl-5 mt-2">
+                    {
+                      exp.tasks.map((task) => (
+                        <li class="text-sm text-gray-700 mb-1">{task}</li>
+                      ))
+                    }
+                  </ul>
+                )
+              }
             </li>
           ))
         }
@@ -78,7 +90,7 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
       </ul>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-4 pt-10">
       <h2 class="text-xl font-semibold">Aptitudes</h2>
       <ul class="list-disc pl-5 mt-2 grid grid-cols-2">
         {

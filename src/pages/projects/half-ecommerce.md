@@ -7,7 +7,7 @@ link: "https://bonnitaglammakeup.com.ar/"
 github: "https://github.com/CristianLeyton/bonnita-glam"
 image: "/assets/images/halfecommerce.webp"
 tags: [LARAVEL , ASTRO, TAILWIND]
-hidden: FALSE
+hidden: true
 ---
 
 Le puse como titulo "Half-Ecommerce" porque para que sea un Ecommerce completo deberia tener una pasarela de pago. Este sitio solo te genera una **"Lista de Deseos"**. Es como que armar un presupuesto que al final lo envias por WhatsApp o Correo para confirmar el pedido a la empresa.

@@ -24,7 +24,7 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
         </ul>
       </section>
 
-      <h2 class="text-lg mt-4 text-indigo-600 font-semibold">
+      <h2 class="text-lg mt-20 pt-10 text-indigo-600 font-semibold">
         Formación académica
       </h2>
       <section class="relative border-s border-gray-400">
@@ -86,6 +86,13 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
         <h2 class="text-lg text-indigo-600 font-semibold">Aptitudes</h2>
         <ul class="list-disc pl-5 text-sm text-gray-600">
           {datosTecnico.aptitudes.map((apt) => <li>{apt}</li>)}
+        </ul>
+      </section>
+
+      <section class="mt-4 border p-3 border-gray-300">
+        <h2 class="text-lg text-indigo-600 font-semibold">Disponibilidad</h2>
+        <ul class="list-disc pl-5 text-sm text-gray-600">
+          {datosTecnico.disponibilidad.map((disp) => <li>{disp}</li>)}
         </ul>
       </section>
     </section>

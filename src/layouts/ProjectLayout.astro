@@ -16,14 +16,17 @@ import Pill from "../components/Pill.astro";
     </div>
     <hr class="border-gray-700 dark:border-gray-300"/>
       <ul class="flex gap-3">
-      {frontmatter.tags.map((tag) => (
-        <li
-          class={`flex w-fit gap-1 items-center rounded-full text-sm py-1 px-2 ${TAGS[tag].class}`}
-        >
-          <TAGS[tag].icon class="size-5"/>
-          {TAGS[tag].name}
-        </li>
-      ))}
+      {frontmatter.tags.map((tag) => {
+        const Icon = TAGS[tag].icon;
+        return (
+          <li
+            class={`flex w-fit gap-1 items-center rounded-full text-sm py-1 px-2 ${TAGS[tag].class}`}
+          >
+            <Icon class="size-5" />
+            {TAGS[tag].name}
+          </li>
+        );
+      })}
       </ul>
       <a href={frontmatter.link} target="_blank" rel="noopener noreferrer">
       <img
@@ -46,7 +49,7 @@ import Pill from "../components/Pill.astro";
       <hr class="border-gray-700 dark:border-gray-300"/>
     </header>
 
-    <main class="prose prose-invert dark:prose text-pretty">
+    <main class="prose prose-invert dark:prose prose-headings:tracking-tight prose-headings:text-neutral-100 dark:prose-headings:text-neutral-800 prose-a:text-indigo-300 dark:prose-a:text-indigo-600 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-strong:text-neutral-100 dark:prose-strong:text-neutral-800 prose-img:rounded-xl prose-img:border prose-img:border-white/10 dark:prose-img:border-neutral-200/70 text-pretty">
     <slot />
     </main>
         <a href="/#proyectos" class="mt-10 font-bold text-sm"> <span class="mr-2">◀</span> Volver atras </a>

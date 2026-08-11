@@ -82,18 +82,26 @@ export const TAGS = {
 
 ---
 
-<article class="card-proyecto hover:border-indigo-400/70 transition bg-black/20 dark:bg-white/40 backdrop-blur-sm flex flex-wrap items-center gap-4 justify-between border border-gray-700/50 dark:border-gray-200 rounded-xl py-4 px-3 mb-4">
+<article class="card-proyecto bg-black/20 dark:bg-white/40 backdrop-blur-sm flex flex-wrap items-center gap-4 justify-between border border-gray-700/50 dark:border-gray-200 rounded-2xl py-4 px-3 mb-4 overflow-hidden" data-reveal>
     <a
       href={url}
-      class="hover:scale-105 transition-all ease-in-out duration-500 mx-auto"
+      class="project-thumb mx-auto relative rounded-xl overflow-hidden"
+      aria-label={`Ver más sobre ${title}`}
     >
       <img
-      transition:name=`image-${title}`
-        class="rounded aspect-video w-[22rem] "
+        transition:name=`image-${title}`
+        class="rounded-xl aspect-video w-[22rem]"
         src={image}
-        alt=""
+        alt={`Captura del proyecto ${title}`}
         title="Ver más sobre el proyecto"
+        loading="lazy"
       />
+      <span class="project-thumb__overlay" aria-hidden="true">
+        <span class="project-thumb__badge">
+          <i class="bx bx-expand-alt text-xl"></i>
+          Ver detalle
+        </span>
+      </span>
     </a>
     <section class="flex flex-col gap-2 justify-center w-full md:w-[45%] text-pretty">
       <h3 class="font-semibold text-2xl text-indigo-300 dark:text-indigo-400 mt-3 sm:mt-0">
@@ -103,14 +111,17 @@ export const TAGS = {
       </h3>
       <ul class="flex gap-2">
         <!--  No se porque da error pero funciona como quiero  -->
-        {tags?.map((tag) => (
-          <li
-            class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${TAGS[tag].class}`}
-          >
-            <TAGS[tag].icon class="w-4 h-4" />
-            <span class="text-xs">{TAGS[tag].name}</span>
-          </li>
-        ))}
+        {tags?.map((tag) => {
+          const Icon = TAGS[tag].icon;
+          return (
+            <li
+              class={`flex gap-1 items-center rounded-full text-xs py-1 px-2 ${TAGS[tag].class}`}
+            >
+              <Icon class="w-4 h-4" />
+              <span class="text-xs">{TAGS[tag].name}</span>
+            </li>
+          );
+        })}
       </ul>
       <p>{description}</p>
       <span class="flex gap-3 ">

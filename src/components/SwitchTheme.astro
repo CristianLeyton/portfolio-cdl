@@ -5,7 +5,8 @@ import SunIcon from "./icons/SunIcon.astro";
 
 <button
   id="themeToggle"
-  class="block p-1 rounded-full transition hover:text-indigo-500 hover:bg-neutral-700/20 hover:scale-110"
+  class="block p-1 rounded-full transition hover:text-indigo-500 hover:bg-neutral-700/20 hover:scale-110 focus-visible:shadow-[0_0_0_3px_rgba(99,102,241,0.35)]"
+  aria-label="Cambiar tema"
 >
   <span id="moonIcon" class="hidden dark:block"><MoonIcon /></span>
   <span id="sunIcon" class="dark:hidden"><SunIcon /></span>

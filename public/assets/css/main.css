@@ -4,6 +4,22 @@
     --negro: #17181c;
     --primary: #6366f1;
     --secondary: #aaaaaa;
+
+    /* Design tokens */
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    --dur-1: 150ms;
+    --dur-2: 250ms;
+    --dur-3: 400ms;
+
+    --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.20);
+    --shadow-2: 0 16px 48px rgba(0, 0, 0, 0.28);
+
+    --ring: 0 0 0 3px rgba(99, 102, 241, 0.35);
 }
 
  body {
@@ -17,19 +33,77 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Better default text rendering */
+body {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+}
+
+/* Keyboard focus (a11y) */
+:where(a, button, [role="button"], input, textarea, select):focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .logo {
     font-family: "Iceberg";
-    transition: 0.15s all ease-in-out;
+    transition: transform var(--dur-1) var(--ease-standard),
+      color var(--dur-1) var(--ease-standard);
 }
 
 
 nav a {
-    transition: 0.15s all ease-in-out;
+    transition: transform var(--dur-1) var(--ease-standard),
+      color var(--dur-1) var(--ease-standard);
 }
 
 nav a:hover {
     color: var(--primary);
     transform: scale(1.05);
+}
+
+.navlink {
+  position: relative;
+  padding: 6px 8px;
+  border-radius: 999px;
+}
+
+.navlink:hover {
+  background-color: rgba(99, 102, 241, 0.10);
+}
+
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0), rgba(99, 102, 241, 0.9), rgba(99, 102, 241, 0));
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+
+.navlink:hover::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .primary {
@@ -44,4 +118,145 @@ nav a:hover {
     border-radius: 50%;
     width: 64px;
     aspect-ratio: 1/1;
+}
+
+.avatar--hero {
+  transition: transform var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08), 0 0 0 8px rgba(99, 102, 241, 0.08);
+}
+
+.avatar--hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.10), 0 0 0 10px rgba(99, 102, 241, 0.14), var(--shadow-1);
+}
+
+/* Pill variants (works with your existing Pill component) */
+.pill {
+  transition: transform var(--dur-1) var(--ease-standard),
+    border-color var(--dur-1) var(--ease-standard),
+    background-color var(--dur-1) var(--ease-standard),
+    box-shadow var(--dur-1) var(--ease-standard),
+    color var(--dur-1) var(--ease-standard);
+  will-change: transform;
+}
+
+.pill--primary {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(139, 92, 246, 0.85));
+  border-color: rgba(99, 102, 241, 0.55) !important;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.18);
+}
+
+.pill--primary:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 16px 42px rgba(99, 102, 241, 0.26);
+}
+
+.pill--ghost {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.pill--ghost:hover {
+  border-color: rgba(99, 102, 241, 0.70) !important;
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+/* Callout micro UX */
+.callout [data-copy-creds][data-copied="true"] {
+  border-color: rgba(34, 197, 94, 0.55) !important;
+  background-color: rgba(34, 197, 94, 0.12) !important;
+}
+
+/* Project cards: premium hover */
+.card-proyecto {
+  position: relative;
+  transition: transform var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+  will-change: transform;
+}
+
+.card-proyecto::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 0%), rgba(99, 102, 241, 0.20), transparent 40%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+
+.card-proyecto:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.55);
+  box-shadow: var(--shadow-1);
+}
+
+.card-proyecto:hover::before {
+  opacity: 1;
+}
+
+.project-thumb img {
+  transition: transform var(--dur-3) var(--ease-out), filter var(--dur-3) var(--ease-out);
+}
+
+.card-proyecto:hover .project-thumb img {
+  transform: scale(1.03);
+  filter: saturate(1.06) contrast(1.03);
+}
+
+.project-thumb__overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(400px circle at 50% 40%, rgba(99, 102, 241, 0.24), rgba(0, 0, 0, 0.10));
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+
+.project-thumb__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transform: translateY(6px);
+  transition: transform var(--dur-2) var(--ease-out);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.card-proyecto:hover .project-thumb__overlay {
+  opacity: 1;
+}
+
+.card-proyecto:hover .project-thumb__badge {
+  transform: translateY(0);
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
