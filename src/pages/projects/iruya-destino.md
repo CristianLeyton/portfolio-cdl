@@ -23,9 +23,9 @@ hidden: false
 ![image](https://cdl.net.ar/assets/images/iruyainteligente.webp)
 
 * **Registro e Inicio de Sesión:** Los usuarios y administradores del sitio poseen cuenta.  
-* **Publicar:** Solo los administradores del sitio pueden crear y editar publicaciones.  
-* **Ver Publicaciones:** Navega por todos los avisos publicados por otros usuarios (Incluso sin estar logueado).  
+* **Ver Publicaciones:** Navega por todos los avisos publicados (Incluso sin estar logueado).  
 * **App mobile** Los usuarios de la app acceden a mapas interactivos y otras funciones especificas de la app.
+* **App mobile** Navegación en el sitio disponible en inglés y español.
 
 ### Para Administradores
 

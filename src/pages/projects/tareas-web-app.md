@@ -27,5 +27,4 @@ Acceder al sitio:
 <https://tareas.cdl.net.ar/>
 
 > Usuario: <test@mail.com>
-
 > Contraseña: test1234
