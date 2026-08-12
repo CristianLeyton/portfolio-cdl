@@ -7,7 +7,7 @@ link: "https://tareas.cdl.net.ar/"
 github: "https://github.com/CristianLeyton/app-tareas"
 image: "/assets/images/tareas.webp"
 tags: [LARAVEL, LIVEWIRE, TAILWIND]
-hidden: false
+hidden: true
 ---
 
 Esta hecha en Laravel usando Livewire, con una base de datos MySQL, traté de hacer más que una simple TO DO APP agregando las siguientes funcionalidades:
