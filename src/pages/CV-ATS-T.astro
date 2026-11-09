@@ -6,23 +6,26 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
 <CVLayout title="CV-ATS-T">
   <div id="cv-content" class="max-w-4xl mx-auto py-4 px-8">
     <section class="mb-6">
-      <h1 class="font-bold mb-4 text-3xl text-center">{datosTecnico.nombre}</h1>
+      <h1 class="font-bold mb-2 text-3xl text-center">{datosTecnico.nombre}</h1>
+      <p class="text-center text-gray-600 mb-2">{datosTecnico.documento}</p>
+      <p class="text-center text-indigo-600 font-semibold mb-4">
+        {datosTecnico.titulo}
+      </p>
       <div class="flex justify-between text-gray-600 font-semibold">
         <a
           href={`mailto:${datosTecnico.email}`}
           target="_blank"
           rel="noopener noreferrer">Email: {datosTecnico.email}</a
         >
-        <p class="">Ubicación: {datosTecnico.direccion}</p>
+        <p class="">Cel: {datosTecnico.telefono}</p>
       </div>
 
       <div class="flex justify-between text-gray-600 font-semibold">
-        <a
-          href={`https://api.whatsapp.com/send/?phone=${datosTecnico.telefono}&text=Hola&type=phone_number&app_absent=0`}
-          target="_blank"
-          rel="noopener noreferrer">Contacto: {datosTecnico.telefono}</a
-        >
-
+        <p class="">
+          CP: {datosTecnico.cp} · Dpto: {datosTecnico.departamento} · Prov: {
+            datosTecnico.provincia
+          }
+        </p>
         {
           datosTecnico.link && (
             <a
@@ -30,10 +33,15 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
               target="_blank"
               rel="noopener noreferrer"
             >
-              Portafolio: {datosTecnico.link}
+              Portfolio: {datosTecnico.link}
             </a>
           )
         }
+      </div>
+
+      <div class="flex justify-between text-gray-600 font-semibold mt-2">
+        <p class="">Disponibilidad: {datosTecnico.disponibilidad}</p>
+        <p class="">{datosTecnico.licencia}</p>
       </div>
     </section>
 
@@ -56,17 +64,13 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
               </span>
               <p class="text-gray-700">{exp.description}</p>
 
-              {
-                exp.tasks && (
-                  <ul class="list-disc pl-5 mt-2">
-                    {
-                      exp.tasks.map((task) => (
-                        <li class="text-sm text-gray-700 mb-1">{task}</li>
-                      ))
-                    }
-                  </ul>
-                )
-              }
+              {exp.tasks && (
+                <ul class="list-disc pl-5 mt-2">
+                  {exp.tasks.map((task) => (
+                    <li class="text-sm text-gray-700 mb-1">{task}</li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))
         }
@@ -96,6 +100,17 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
         {
           datosTecnico.aptitudes.map((apt) => (
             <li class="text-gray-700">{apt}</li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-4">
+      <h2 class="text-xl font-semibold">Competencias profesionales</h2>
+      <ul class="list-disc pl-5 mt-2">
+        {
+          datosTecnico.competenciasProfesionales.map((comp) => (
+            <li class="text-gray-700 mb-1">{comp}</li>
           ))
         }
       </ul>

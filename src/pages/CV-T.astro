@@ -12,6 +12,8 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
   >
     <section class="col-span-2">
       <h1 class="text-3xl font-bold">{datosTecnico.nombre}</h1>
+      <p class="text-sm text-gray-600">{datosTecnico.documento}</p>
+      <p class="text-sm text-indigo-600 font-semibold">{datosTecnico.titulo}</p>
       <section class="mt-4">
         <h2 class="text-lg text-indigo-600 font-semibold">Resumen</h2>
         <p>{datosTecnico.resumen}</p>
@@ -36,9 +38,10 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
 
     <section class="col-span-1">
       <img
-      src={avatar.src}
-      alt="Foto"
-      class="size-44 rounded-full bg-gray-400  mx-auto ">
+        src={avatar.src}
+        alt="Foto"
+        class="size-44 rounded-full bg-gray-400 mx-auto"
+      />
       <header
         class="flex flex-wrap items-center border p-3 border-gray-300 relative mt-4"
       >
@@ -64,6 +67,11 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
             <i class="bx bxs-map"></i>
             {datosTecnico.direccion}
           </p>
+          <p class="text-gray-600 text-sm">
+            CP: {datosTecnico.cp} · Dpto: {datosTecnico.departamento} · Prov: {
+              datosTecnico.provincia
+            }
+          </p>
 
           {
             datosTecnico.link && (
@@ -74,13 +82,19 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  cdl.net.ar - Portfolio 
+                  cdl.net.ar - Portfolio
                 </a>
               </p>
             )
           }
         </div>
       </header>
+
+      <section class="mt-4 border p-3 border-gray-300">
+        <h2 class="text-lg text-indigo-600 font-semibold">Disponibilidad</h2>
+        <p class="text-sm text-gray-600">{datosTecnico.disponibilidad}</p>
+        <p class="text-sm text-gray-600 mt-1">{datosTecnico.licencia}</p>
+      </section>
 
       <section class="mt-4 border p-3 border-gray-300">
         <h2 class="text-lg text-indigo-600 font-semibold">Aptitudes</h2>
@@ -90,9 +104,15 @@ import { datosTecnico } from "../layouts/CVLayout.astro";
       </section>
 
       <section class="mt-4 border p-3 border-gray-300">
-        <h2 class="text-lg text-indigo-600 font-semibold">Disponibilidad</h2>
+        <h2 class="text-lg text-indigo-600 font-semibold">
+          Competencias profesionales
+        </h2>
         <ul class="list-disc pl-5 text-sm text-gray-600">
-          {datosTecnico.disponibilidad.map((disp) => <li>{disp}</li>)}
+          {
+            datosTecnico.competenciasProfesionales.map((comp) => (
+              <li>{comp}</li>
+            ))
+          }
         </ul>
       </section>
     </section>

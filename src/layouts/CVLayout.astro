@@ -1,85 +1,129 @@
 ---
+import "../styles/main.css";
 const { title } = Astro.props;
 
 export const datosDesarrollador = {
   nombre: "Cristian Diego Leyton",
+  documento: "",
+  titulo: "TÉCNICO EN PROGRAMACIÓN | TÉCNICO EN ANÁLISIS DE SISTEMAS",
   telefono: "+54-387-5459077",
   email: "leytoncristian96@gmail.com",
   direccion: "Salta - Argentina",
+  cp: "4400",
+  departamento: "Salta",
+  provincia: "Salta",
   link: "https://www.cdl.net.ar/",
-  resumen: `Soy técnico en análisis de sistemas informáticos y 
-  desarrollador web full stack. Trabajo con tecnologías como HTML, CSS, JS, PHP y MySQL. 
-  Trabajé 4 años brindando soporte técnico a un sistema de gestión de farmacias. 
-  Me destaco por ser resolutivo, atento y comunicativo.
-`,
+  disponibilidad: "Jornada completa - Presencial",
+  licencia: "Licencia A1.2, B1 - Disponibilidad para viajar.",
+  resumen: `Técnico en Programación y Técnico en Análisis de Sistemas Informáticos, con experiencia en desarrollo web. Cuento con experiencia práctica desarrollando proyectos reales y académicos con HTML, CSS, JavaScript, React, Tailwind CSS, Astro, Laravel y APIs REST.
+
+Mi experiencia como desarrollador freelance y brindando soporte técnico me permitió desarrollar una fuerte capacidad de análisis, atención al detalle, detección de problemas y comprensión de necesidades de usuarios.`,
   experiencia: [
     {
       title: "Desarrollador Web Freelance",
       date: "Febrero 2025 - Actualidad",
-      empresa: "Independiente",
-      description: `Diseño y desarrollo de soluciones digitales personalizadas para clientes, 
-    incluyendo sistemas de gestión de alumnos, landing pages orientadas a marketing 
-    y tiendas online.`,
+      empresa: "Trabajo independiente",
+      description: `Diseño y desarrollo de soluciones web personalizadas para clientes.`,
       tasks: [
-        "Diseño y desarrollo de landing pages orientadas a marketing.",
-        "Creación y mantenimiento de tiendas online.",
-        "Desarrollo de sistemas de gestión de alumnos y clientes.",
-        "Implementación de soluciones digitales personalizadas según el requerimiento del cliente.",
+        "Diseño y desarrollo de landing pages, sitios web y aplicaciones.",
+        "Desarrollo de interfaces frontend utilizando HTML, CSS, JavaScript, React, Vue, Astro y Tailwind CSS.",
+        "Integración de APIs y servicios externos.",
+        "Desarrollo de interfaces responsive y adaptadas a diferentes dispositivos.",
+        "Implementación y reutilización de componentes.",
+        "Uso de Git y GitHub para control de versiones.",
+        "Análisis de requerimientos y resolución de problemas.",
       ],
     },
     {
       title: "Auxiliar de Soporte Técnico",
       date: "Enero 2021 - Agosto 2025",
-      empresa: "Alfa Beta",
-      description: `Instalación, configuración y mantenimiento del sistema de gestión de farmacias (Winfarma) 
-    en diferentes puntos de la provincia de Salta. 
-    Asistencia técnica remota y presencial.`,
+      empresa: "Estudio Contable Galdeano – Alfa Beta / Winfarma",
+      description: `Relevamiento, análisis y gestión de requerimientos en sistema de gestión de farmacias.`,
       tasks: [
-        "Instalación y mantenimiento del sistema de gestión Winfarma.",
-        "Soporte técnico presencial y remoto a usuarios.",
-        "Diagnóstico y reparación de equipos informáticos.",
-        "Configuración de redes, impresoras y dispositivos periféricos.",
+        "Relevamiento, análisis y gestión de requerimientos.",
+        "Atención y asistencia técnica a usuarios presencial y remotamente.",
+        "Diagnóstico y resolución de incidencias en sistemas y aplicaciones.",
+        "Identificación de necesidades y búsqueda de alternativas de solución.",
+        "Seguimiento de requerimientos hasta su resolución.",
+        "Trabajo sobre sistemas existentes y adaptación a diferentes necesidades.",
+        "Comunicación directa con usuarios para comprender problemas y requerimientos.",
+        "Instalación, configuración y mantenimiento de sistemas.",
+        "Capacitación y acompañamiento a usuarios.",
       ],
     },
     {
-      title: "Técnico en Reparación de PC",
-      date: "Enero 2019 - Enero 2021",
-      empresa: "Independiente",
-      description: `Mantenimiento preventivo y correctivo de equipos de escritorio y portátiles, 
-    instalación de sistemas operativos y armado/actualización de hardware.`,
+      title: "Técnico en Reparación y Mantenimiento Informático",
+      date: "Enero 2019 - Enero 2026",
+      empresa: "Trabajo independiente",
+      description: `Diagnóstico y resolución de problemas de hardware y software.`,
       tasks: [
-        "Mantenimiento preventivo y correctivo de equipos.",
-        "Instalación y reinstalación de sistemas operativos.",
-        "Armado y actualización de hardware.",
-        "Diagnóstico y reparación de computadoras de escritorio y notebooks.",
+        "Diagnóstico y resolución de problemas de hardware y software.",
+        "Instalación y configuración de sistemas operativos y software.",
+        "Reparación, mantenimiento y actualización de equipos.",
+        "Configuración de redes y dispositivos.",
+        "Análisis de requerimientos y búsqueda de soluciones.",
       ],
     },
   ],
-  aptitudes: [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "PHP",
-    "MySQL",
-    "Astro",
-    "Laravel - Livewire",
-    "VUE",
-    "React",
-    "Tailwind - Bootstrap",
-    "GIT/GITHUB",
-    /*     "Resolutivo y orientado a resultados", */
-    "Autonomía, comunicativo y colaborativo",
+  aptitudes: {
+    frontend: [
+      "HTML5, CSS3, JavaScript y TypeScript",
+      "React y desarrollo basado en componentes",
+      "Vue",
+      "Tailwind CSS",
+      "Astro",
+      "Maquetación y desarrollo de interfaces web",
+      "Diseño responsive y Mobile-First",
+      "UX/UI, jerarquía visual y consistencia de interfaces",
+      "Nociones de accesibilidad web",
+    ],
+    backend: [
+      "PHP",
+      "Laravel",
+      "SQL",
+      "APIs REST y consumo de servicios",
+      "JSON",
+    ],
+    herramientas: ["Git y GitHub", "Figma"],
+  },
+  proyectos: [
+    {
+      title: "Sitio turístico de Iruya",
+      description:
+        "Sitio web turístico de la localidad de Iruya, Salta, Argentina. Desarrollado con Laravel, Livewire y Tailwind CSS.",
+    },
+    {
+      title: "Iglesia — Landing Page",
+      description:
+        "Landing page de una iglesia cristiana local desarrollada con React y Tailwind CSS.",
+    },
+    {
+      title: "Mascotas Perdidas",
+      description:
+        "Sitio web para reportar mascotas perdidas desarrollado con Laravel, Livewire, Tailwind CSS y JavaScript + panel de administración.",
+    },
+    {
+      title: "Wuaze TV",
+      description:
+        "Sitio web de streaming de contenido para un canal de televisión local desarrollado con Vue, Tailwind CSS y Laravel + sistema de contenido administrable.",
+    },
   ],
   formacion: [
     {
-      title: "Técnico en Análisis de Sistemas informáticos",
-      date: "Febrero 2021 - Noviembre 2023",
+      title: "Técnico en Programación",
+      date: "Febrero 2021 - Diciembre 2022",
       description: "Instituto Superior del Milagro.",
     },
     {
-      title: "Inglés",
-      date: "Marzo 2024 - Presente",
-      description: "Inglés en la Universidad Nacional de Salta. Nivel intermedio. ",
+      title: "Técnico en Análisis de Sistemas informáticos",
+      date: "Febrero 2021 - Diciembre 2023",
+      description: "Instituto Superior del Milagro.",
+    },
+    {
+      title: "Inglés - Nivel Intermedio",
+      date: "Formación actual",
+      description:
+        "Instituto de Idiomas de la Provincia de Salta. Capacidad para interpretar documentación técnica.",
     },
     {
       title: "Educación Secundaria - Técnico Electrónico",
@@ -87,49 +131,57 @@ export const datosDesarrollador = {
       description: "Escuela de Educación Técnica 'Albert Einstein'.",
     },
   ],
-  presentacion: `
-  Me destaco por mi capacidad para comunicarme de forma clara y  
-  escuchar activamente, facilitando la resolución y prevención de problemas.
-  Actualmente sigo practicando por mi cuenta creando algunos proyectos pequeños para ganar
-  experiencia, aprendiendo nuevas tecnologías de manera autodidacta y trabajando como freelance.
-  Puedes ver mi portafolio si lo deseas, deje el link arriba a la derecha.
-`,
+  competenciasProfesionales: [
+    /*     "Atención al detalle: Capacidad para detectar inconsistencias, errores y diferencias entre el resultado esperado y el obtenido.",
+    "Criterio visual: Interés y experiencia práctica en el desarrollo de interfaces, con atención a jerarquías, espaciados, alineaciones, tipografía y consistencia visual.",
+    "Análisis y resolución de problemas: Capacidad para analizar situaciones, identificar causas y desarrollar soluciones estructuradas.",
+    "Aprendizaje continuo: Interés constante por incorporar nuevas tecnologías y herramientas relacionadas con desarrollo frontend y UI.",
+    "Trabajo en equipo y autonomía: Experiencia trabajando con usuarios y perfiles técnicos, gestionando requerimientos y realizando seguimiento hasta su resolución.", */
+  ],
+  presentacion: ``,
 };
 
 export const datosTecnico = {
   nombre: "Cristian Diego Leyton",
+  documento: "DNI 39780520",
+  titulo: "TÉCNICO EN ANÁLISIS DE SISTEMAS | TÉCNICO ELECTRÓNICO",
   telefono: "+54-387-5459077",
   email: "leytoncristian96@gmail.com",
   direccion: "Salta - Argentina",
+  cp: "4400",
+  departamento: "Capital",
+  provincia: "Salta",
   link: "",
-  resumen: `Técnico en Análisis de Sistemas Informáticos y Técnico Electrónico con más de 4 años de experiencia en soporte técnico, mantenimiento de hardware, diagnóstico y reparación de equipos informáticos. Experiencia en instalación, configuración y mantenimiento de sistemas Windows y Linux, redes y conectividad, asistencia a usuarios y trabajo en campo. Me caracterizo por brindar soluciones rápidas, comunicarme de forma clara y ofrecer un excelente servicio al cliente.
-`,
+  disponibilidad: "Jornada completa · Presencial o Remoto",
+  licencia: "Automóvil y motocicleta · Disponibilidad para viajes: Sí",
+  resumen: `Técnico en Análisis de Sistemas Informáticos y Técnico Electrónico con más de 4 años de experiencia en soporte técnico, mantenimiento de hardware, diagnóstico y reparación de equipos informáticos. Experiencia en instalación, configuración y mantenimiento de sistemas Windows y Linux, redes y conectividad, asistencia a usuarios y trabajo en campo. Me caracterizo por brindar soluciones rápidas, comunicarme de forma clara y ofrecer un excelente servicio al cliente.`,
   experiencia: [
     {
       title: "Auxiliar de Soporte Técnico",
       date: "Enero 2021 - Agosto 2025",
-      empresa: "Alfa Beta",
-      description: `Alfa beta cuenta con un sistema de gestión/facturación de farmacias (Winfarma), fuí el encargado de instalar
-y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
-`,
+      empresa: "Estudio Contable Galdeano – Alfa Beta / Winfarma",
+      description: `Relevamiento, análisis y gestión de requerimientos en sistema de gestión de farmacias.`,
       tasks: [
-        "Instalación, configuración y mantenimiento del sistema de gestión Winfarma.",
-        "Diagnóstico y reparación de equipos informáticos.",
-        "Soporte técnico presencial y remoto a usuarios.",
-        "Instalación y mantenimiento de hardware.",
+        "Relevamiento, análisis y gestión de requerimientos.",
+        "Atención y asistencia técnica a usuarios presencial y remotamente.",
+        "Diagnóstico y resolución de incidencias en sistemas y aplicaciones.",
+        "Identificación de necesidades y búsqueda de alternativas de solución.",
+        "Seguimiento de requerimientos hasta su resolución.",
+        "Trabajo sobre sistemas existentes y adaptación a diferentes necesidades.",
+        "Comunicación directa con usuarios para comprender problemas y requerimientos.",
+        "Instalación, configuración y mantenimiento de sistemas.",
+        "Capacitación y acompañamiento a usuarios.",
         "Configuración de redes locales, impresoras y dispositivos periféricos.",
         "Instalación y configuración de sistemas operativos Windows.",
         "Resolución de incidencias de software y hardware.",
-        "Capacitación básica a usuarios sobre el uso del sistema.",
         "Mantenimiento preventivo y correctivo de equipos.",
       ],
     },
     {
-      title: "Técnico en reparación de PC",
-      date: "Enero 2019 - Enero 2021",
-      empresa: "Independiente",
-      description: `Trabajé de forma independiente reparando PC a clientes particulares. 
-      Tengo experiencia instalando sistemas operativos, armando, actualizando y dandole mantenimiento a equipos.`,
+      title: "Técnico en Reparación y Mantenimiento Informático",
+      date: "Enero 2019 - Enero 2026",
+      empresa: "Trabajo independiente",
+      description: `Diagnóstico y resolución de problemas de hardware y software.`,
       tasks: [
         "Diagnóstico y reparación de computadoras de escritorio y notebooks.",
         "Instalación y reinstalación de sistemas operativos.",
@@ -138,6 +190,8 @@ y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
         "Configuración de redes domésticas.",
         "Instalación de drivers y software.",
         "Optimización del rendimiento de equipos.",
+        "Configuración de redes y dispositivos.",
+        "Análisis de requerimientos y búsqueda de soluciones.",
       ],
     },
   ],
@@ -150,10 +204,9 @@ y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
     "Comunicación efectiva",
     "Organización",
     "Resolutivo y orientado a resultados",
-  ],
-  disponibilidad: [
-    "Full-time",
-    "Disponible para viajar (Licencia de conducir A1.2 y B1)",
+    "Análisis de requerimientos",
+    "Atención al detalle",
+    "Resolución de problemas",
   ],
 
   formacion: [
@@ -163,20 +216,23 @@ y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
       description: "Instituto Superior del Milagro.",
     },
     {
-      title: "Inglés",
-      date: "Marzo 2024 - Presente",
-      description: "Curso de Inglés en la Universidad Nacional de Salta.",
+      title: "Inglés - Nivel Intermedio",
+      date: "Formación actual",
+      description:
+        "Instituto de Idiomas de la Provincia de Salta. Capacidad para interpretar documentación técnica.",
     },
-    /*     {
-      title: "Técnico en reparación PC's",
-      date: "Agosto 2012 - Diciembre 2012",
-      description: "Fundación Roberto Romero",
-    }, */
     {
       title: "Educación Secundaria – Técnico Electrónico",
       date: "Enero 2012 - Enero 2018",
       description: "Escuela de Educación Técnica 'Albert Einstein'.",
     },
+  ],
+
+  competenciasProfesionales: [
+    "Atención al detalle: Capacidad para detectar inconsistencias, errores y diferencias entre el resultado esperado y el obtenido.",
+    "Análisis y resolución de problemas: Capacidad para analizar situaciones, identificar causas y desarrollar soluciones estructuradas.",
+    "Trabajo en equipo y autonomía: Experiencia trabajando con usuarios y perfiles técnicos, gestionando requerimientos y realizando seguimiento hasta su resolución.",
+    "Comunicación efectiva: Capacidad para comunicarme de forma clara, escuchar activamente y asesorar a los usuarios.",
   ],
 
   presentacion: `
@@ -204,7 +260,6 @@ y dar mantenimiento a las farmacias de Salta que utilizan dicho sistema.
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/css/main.css?v=1" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>{title}</title>
   </head>

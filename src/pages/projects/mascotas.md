@@ -22,7 +22,7 @@ La idea fue propuesta por SaltaDev para la ciudad de Salta, Argentina.
 
 [Ver Demo](https://mascotas.cdl.net.ar/) - mascotas.cdl.net.ar  
 
-## ✨ Funcionalidades Principales
+## Funcionalidades Principales
 
 ### Para Usuarios
 
@@ -43,7 +43,7 @@ La idea fue propuesta por SaltaDev para la ciudad de Salta, Argentina.
 * **Moderación de Contenido:** Revisa y gestiona los reportes realizados por los usuarios sobre las publicaciones.  
 * **Gestión de Catálogos:** Administra las especies y razas de mascotas disponibles en la plataforma.  
 
-## 🚀 Stack Tecnológico
+## Stack Tecnológico
 
 **Backend:**  
     - PHP 8.2+  

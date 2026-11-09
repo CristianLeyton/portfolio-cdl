@@ -6,29 +6,39 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
 <CVLayout title="CV-ATS">
   <div id="cv-content" class="max-w-4xl mx-auto py-4 px-8">
     <section class="mb-6">
-      <h1 class="font-bold mb-4 text-3xl text-center">{datosDesarrollador.nombre}</h1>
+      <h1 class="font-bold mb-2 text-3xl text-center">
+        {datosDesarrollador.nombre}
+      </h1>
+      <p class="text-center text-gray-600 mb-2">
+        {datosDesarrollador.documento}
+      </p>
+      <p class="text-center text-indigo-600 font-semibold mb-4">
+        {datosDesarrollador.titulo}
+      </p>
       <div class="flex justify-between text-gray-600 font-semibold">
         <a
           href={`mailto:${datosDesarrollador.email}`}
           target="_blank"
           rel="noopener noreferrer">Email: {datosDesarrollador.email}</a
         >
-        <p class="">Ubicación: {datosDesarrollador.direccion}</p>
+        <p class="">Cel: {datosDesarrollador.telefono}</p>
       </div>
 
       <div class="flex justify-between text-gray-600 font-semibold">
+        <p class="">
+          CP: {datosDesarrollador.cp} · Dpto: {datosDesarrollador.departamento} ·
+          Prov: {datosDesarrollador.provincia}
+        </p>
         <a
-          href={`https://api.whatsapp.com/send/?phone=${datosDesarrollador.telefono}&text=Hola&type=phone_number&app_absent=0`}
+          href={datosDesarrollador.link}
           target="_blank"
-          rel="noopener noreferrer">Contacto: {datosDesarrollador.telefono}</a>
-        
-
-        {
-
-        }
-        <a href={datosDesarrollador.link} target="_blank" rel="noopener noreferrer"
-        >Portfolio: {datosDesarrollador.link}</a
+          rel="noopener noreferrer">Portfolio: {datosDesarrollador.link}</a
         >
+      </div>
+
+      <div class="flex justify-between text-gray-600 font-semibold mt-2">
+        <p class="">Disponibilidad: {datosDesarrollador.disponibilidad}</p>
+        <p class="">{datosDesarrollador.licencia}</p>
       </div>
     </section>
 
@@ -74,9 +84,69 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
     </section>
 
     <section class="mt-4">
+      <h2 class="text-xl font-semibold">Proyectos destacados</h2>
+
+      <p class="text-sm text-gray-600">
+        <a
+          href={datosDesarrollador.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-indigo-600 hover:text-indigo-800"
+        >
+          Ver proyectos en cdl.net.ar →
+        </a>
+      </p>
+
+      <ul class="list-disc pl-5 mt-2">
+        {
+          datosDesarrollador.proyectos.map((proj) => (
+            <li class="mb-2">
+              <strong>{proj.title}</strong>
+              <p class="text-gray-700">{proj.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="mt-4">
       <h2 class="text-xl font-semibold">Aptitudes</h2>
-      <ul class="list-disc pl-5 mt-2 grid grid-cols-2">
-        {datosDesarrollador.aptitudes.map((apt) => <li class="text-gray-700">{apt}</li>)}
+      <div class="mt-2">
+        <h3 class="font-semibold text-indigo-600 mt-2">Frontend</h3>
+        <ul class="list-disc pl-5 grid grid-cols-2">
+          {
+            datosDesarrollador.aptitudes.frontend.map((apt) => (
+              <li class="text-gray-700">{apt}</li>
+            ))
+          }
+        </ul>
+        <h3 class="font-semibold text-indigo-600 mt-2">Backend</h3>
+        <ul class="list-disc pl-5 grid grid-cols-2">
+          {
+            datosDesarrollador.aptitudes.backend.map((apt) => (
+              <li class="text-gray-700">{apt}</li>
+            ))
+          }
+        </ul>
+        <h3 class="font-semibold text-indigo-600 mt-2">Herramientas</h3>
+        <ul class="list-disc pl-5 grid grid-cols-2">
+          {
+            datosDesarrollador.aptitudes.herramientas.map((apt) => (
+              <li class="text-gray-700">{apt}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="mt-4">
+      <h2 class="text-xl font-semibold">Competencias profesionales</h2>
+      <ul class="list-disc pl-5 mt-2">
+        {
+          datosDesarrollador.competenciasProfesionales.map((comp) => (
+            <li class="text-gray-700 mb-1">{comp}</li>
+          ))
+        }
       </ul>
     </section>
 

@@ -6,15 +6,22 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
 ---
 
 <CVLayout title="CV">
-  <div id="cv-content" class="grid grid-cols-3 gap-6 mx-auto py-4 px-8 max-w-4xl">
+  <div
+    id="cv-content"
+    class="grid grid-cols-3 gap-6 mx-auto py-4 px-8 max-w-4xl"
+  >
     <section class="col-span-2 flex flex-col gap-2">
       <h1 class="text-3xl font-bold">{datosDesarrollador.nombre}</h1>
+      <p class="text-sm text-gray-600">{datosDesarrollador.documento}</p>
+      <p class="text-sm text-indigo-600 font-semibold">
+        {datosDesarrollador.titulo}
+      </p>
       <section class="">
-        <h2 class="text-lg text-indigo-600 font-semibold">Resumen</h2>
+        <h2 class="text-lg text-indigo-600 font-semibold mt-6">Resumen</h2>
         <p>{datosDesarrollador.resumen}</p>
       </section>
 
-      <h2 class="text-lg text-indigo-600 font-semibold">Experiencia</h2>
+      <h2 class="text-lg text-indigo-600 font-semibold mt-6">Experiencia</h2>
       <section class="relative border-s border-gray-400">
         <ul class="pl-5">
           {
@@ -25,14 +32,52 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
         </ul>
       </section>
 
-      <h2 class="text-lg text-indigo-600 font-semibold mt-44">
-        Formación académica
-      </h2>
+      <h2 class="text-lg text-indigo-600 font-semibold">Formación académica</h2>
       <section class="relative border-s border-gray-400">
         <ul class="pl-5">
           {
             datosDesarrollador.formacion.map((edu) => (
               <ExperienceItemCV {...edu} />
+            ))
+          }
+        </ul>
+      </section>
+
+      <h2 class="text-lg text-indigo-600 font-semibold mt-4">
+        Proyectos destacados
+      </h2>
+      <p class="text-sm text-gray-600">
+        <a
+          href={datosDesarrollador.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-indigo-600 hover:text-indigo-800"
+        >
+          Ver proyectos en cdl.net.ar →
+        </a>
+      </p>
+      <section class="relative border-s border-gray-400">
+        <ul class="pl-5">
+          {
+            datosDesarrollador.proyectos.map((proj) => (
+              <ExperienceItemCV {...proj} />
+            ))
+          }
+        </ul>
+      </section>
+
+      {
+        datosDesarrollador.competenciasProfesionales.length > 0 && (
+          <h2 class="text-lg text-indigo-600 font-semibold mt-8">
+            Competencias profesionales
+          </h2>
+        )
+      }
+      <section class="mt-2">
+        <ul class="list-disc pl-5 text-sm text-gray-700">
+          {
+            datosDesarrollador.competenciasProfesionales.map((comp) => (
+              <li>{comp}</li>
             ))
           }
         </ul>
@@ -70,6 +115,11 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
             <i class="bx bxs-map"></i>
             {datosDesarrollador.direccion}
           </p>
+          <p class="text-gray-600 text-sm">
+            CP: {datosDesarrollador.cp} · {
+              datosDesarrollador.departamento
+            } · {datosDesarrollador.provincia}
+          </p>
 
           {
             datosDesarrollador.link && (
@@ -80,7 +130,7 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  cdl.net.ar - Portfolio 
+                  cdl.net.ar - Portfolio
                 </a>
               </p>
             )
@@ -89,10 +139,31 @@ import { datosDesarrollador } from "../layouts/CVLayout.astro";
       </header>
 
       <section class="mt-4 border p-3 border-gray-300">
+        <h2 class="text-lg text-indigo-600 font-semibold">Disponibilidad</h2>
+        <p class="text-sm text-gray-600">{datosDesarrollador.disponibilidad}</p>
+        <p class="text-sm text-gray-600 mt-1">{datosDesarrollador.licencia}</p>
+      </section>
+
+      <section class="mt-4 border p-3 border-gray-300">
         <h2 class="text-lg text-indigo-600 font-semibold">Aptitudes</h2>
-        <ul class="list-disc pl-5 text-sm text-gray-600">
-          {datosDesarrollador.aptitudes.map((apt) => <li>{apt}</li>)}
-        </ul>
+        <div class="text-sm text-gray-600">
+          <h3 class="font-semibold text-indigo-500 mt-2">Frontend</h3>
+          <ul class="list-disc pl-5">
+            {datosDesarrollador.aptitudes.frontend.map((apt) => <li>{apt}</li>)}
+          </ul>
+          <h3 class="font-semibold text-indigo-500 mt-2">Backend</h3>
+          <ul class="list-disc pl-5">
+            {datosDesarrollador.aptitudes.backend.map((apt) => <li>{apt}</li>)}
+          </ul>
+          <h3 class="font-semibold text-indigo-500 mt-2">Herramientas</h3>
+          <ul class="list-disc pl-5">
+            {
+              datosDesarrollador.aptitudes.herramientas.map((apt) => (
+                <li>{apt}</li>
+              ))
+            }
+          </ul>
+        </div>
       </section>
     </section>
 

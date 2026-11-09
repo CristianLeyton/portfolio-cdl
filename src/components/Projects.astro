@@ -1,6 +1,8 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
-let PROJECTS = await Astro.glob('../pages/projects/*.md');
+let PROJECTS = Object.entries(
+  import.meta.glob('../pages/projects/*.md', { eager: true })
+).map((entry) => entry[1]);
 
 PROJECTS = PROJECTS
   .sort((a, b) => b.frontmatter.order - a.frontmatter.order)

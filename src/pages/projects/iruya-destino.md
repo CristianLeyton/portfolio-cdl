@@ -16,7 +16,7 @@ hidden: false
 
 [Ver Demo](https://iruyadestino.com.ar/es) - iruyadestino.com.ar/es  
 
-## ✨ Funcionalidades Principales
+## Funcionalidades Principales
 
 ### Para Usuarios
 
@@ -33,7 +33,7 @@ hidden: false
 
 * **Panel de Administración Completo:** Acceso a un panel de control avanzado construido con Filament.  
 
-## 🚀 Stack Tecnológico
+## Stack Tecnológico
 
 **Backend:**  
     - PHP 8.2+  
